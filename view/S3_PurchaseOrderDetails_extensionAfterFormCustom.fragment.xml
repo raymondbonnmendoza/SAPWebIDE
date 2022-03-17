@@ -1,0 +1,62 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc">
+
+	
+	<!-- This extension point can be used to add fields to Page -->
+	 
+		<!--<Table xmlns="sap.m" id="PurchaseOrderItems_clone" headerText="{viewProperties&gt;/itemTableHeader}" updateFinished="onUpdateFinished" class="nwEpmRefappsExtPoApvControlLayout" items="{path: 'PurchaseOrderItems',      parameters: {select: 'POId,POItemPos,Product,Price,PriceCurrency,GrossAmount,GrossAmountCurrency,Quantity,DeliveryDate'}}">
+			<columns>
+				<Column minScreenWidth="Tablet" demandPopin="true" width="30%">
+					<header>
+						<Label text="{/#PurchaseOrderItem/Product/@sap:label}"/>
+					</header>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" width="15%">
+					<header>
+						<Label text="{/#PurchaseOrderItem/DeliveryDate/@sap:label}"/>
+					</header>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right" width="15%">
+					<header>
+						<Label text="{/#PurchaseOrderItem/Quantity/@sap:label}"/>
+					</header>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right" width="20%">
+					<header>
+						<Label text="{/#PurchaseOrderItem/Price/@sap:label}"/>
+					</header>
+				</Column>
+				<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right" width="20%">
+					<header>
+						<Label text="{/#PurchaseOrderItem/GrossAmount/@sap:label}"/>
+					</header>
+				</Column>
+			</columns>
+			<ColumnListItem id="POItemList_clone">
+				<cells>
+					<Text text="{Product}" class="sapMTableContentMargin"/>
+					<Text text="{path:'DeliveryDate', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.deliveryDate' }" class="sapMTableContentMargin"/>
+					<Text text="{Quantity}" class="sapMTableContentMargin"/>
+					<Text text="{parts:[{path:'Price'}, {path:'PriceCurrency'}], formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.amountWithCurrency'}" class="sapMTableContentMargin"/>
+					<ObjectNumber number="{path: 'GrossAmount', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.amountWithOutCurrency'}" unit="{GrossAmountCurrency}" class="sapMTableContentMargin"/>
+				</cells>
+			</ColumnListItem>
+		</Table> -->
+		
+		<IconTabBar>
+            <items>
+                <IconTabFilter
+                    id="ZiconTabFilter"
+                    icon="sap-icon://hint">
+                    <form:SimpleForm xmlns:form="sap.ui.layout.form" title="" layout="ResponsiveGridLayout" minWidth="1024" maxContainerCols="2" class="nwEpmRefappsExtPoApvControlLayout" labelSpanL="3" labelSpanM="3" emptySpanL="5" emptySpanM="5" columnsL="1" columnsM="1">
+                        <Label xmlns="sap.m" text="Currency Code"/>
+                        <Text xmlns="sap.m" text="{CurrencyCode}"/>
+                    </form:SimpleForm>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+	
+
+</core:FragmentDefinition>
+
+ 
+			

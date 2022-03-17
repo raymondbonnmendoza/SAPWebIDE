@@ -1,0 +1,78 @@
+{
+  "generation": [
+    {
+      "templateId": "fioriexttemplate.extensionProject",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:21:46 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:24:01 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.hidecontrolcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:29:09 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:31:16 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:37:47 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:41:53 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.i18ncomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:44:50 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/EPM_REF_APPS_PO_APV_SRV",
+    "metadataFilePath": "model/metadata.xml",
+    "loadJSONFiles": true,
+    "loadCustomRequests": true,
+    "mockRequestsFilePath": ""
+  },
+  "extensibility": {
+    "controllers": {
+      "EmptyPage": "/nw.epm.refapps.ext.po.apv/view/EmptyPage.controller.js",
+      "Main": "/nw.epm.refapps.ext.po.apv/view/Main.controller.js",
+      "S2_PurchaseOrders": "/nw.epm.refapps.ext.po.apv/view/S2_PurchaseOrders.controller.js",
+      "S3_PurchaseOrderDetails": "/nw.epm.refapps.ext.po.apv/view/S3_PurchaseOrderDetails.controller.js",
+      "S3_PurchaseOrderSummary": "/nw.epm.refapps.ext.po.apv/view/S3_PurchaseOrderSummary.controller.js"
+    },
+    "views": {
+      "EmptyPage": "/nw.epm.refapps.ext.po.apv/view/EmptyPage.view.xml",
+      "Main": "/nw.epm.refapps.ext.po.apv/view/Main.view.xml",
+      "S2_PurchaseOrders": "/nw.epm.refapps.ext.po.apv/view/S2_PurchaseOrders.view.xml",
+      "S3_PurchaseOrderDetails": "/nw.epm.refapps.ext.po.apv/view/S3_PurchaseOrderDetails.view.xml",
+      "S3_PurchaseOrderSummary": "/nw.epm.refapps.ext.po.apv/view/S3_PurchaseOrderSummary.view.xml"
+    },
+    "fragments": {
+      "ApprovalDialog": "/nw.epm.refapps.ext.po.apv/view/fragment/ApprovalDialog.fragment.xml",
+      "ShareSheet": "/nw.epm.refapps.ext.po.apv/view/fragment/ShareSheet.fragment.xml"
+    },
+    "type": "Workspace",
+    "component": "/nw.epm.refapps.ext.po.apv/Component.js",
+    "namespace": "nw.epm.refapps.ext.po.apv",
+    "resourceBundle": "i18n/i18n.properties",
+    "parenturl": "../nw.epm.refapps.ext.po.apv"
+  }
+}
