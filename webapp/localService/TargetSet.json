@@ -1,0 +1,69 @@
+[{
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCPO",
+	"TargetName": "Planning and Organizing",
+	"TargetDescription": "Establishing courses of action for self and others to ensure that work is completed effeciently",
+	"KeyActions": "Prioritizes"
+}, {
+	"KeyActions": "Determines tasks and resources",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCPO",
+	"TargetName": "Planning and Organizing",
+	"TargetDescription": "Establishing courses of action for self and others to ensure that work is completed effeciently"
+}, {
+	"KeyActions": "Schedules",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCPO",
+	"TargetName": "Planning and Organizing",
+	"TargetDescription": "Establishing courses of action for self and others to ensure that work is completed effeciently"
+}, {
+	"KeyActions": "Leverages resources",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCPO",
+	"TargetName": "Planning and Organizing",
+	"TargetDescription": "Establishing courses of action for self and others to ensure that work is completed effeciently"
+}, {
+	"KeyActions": "Stays focused",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCPO",
+	"TargetName": "Planning and Organizing",
+	"TargetDescription": "Establishing courses of action for self and others to ensure that work is completed effeciently"
+}, {
+	"TargetID": "PCIA",
+	"TargetName": "Initiating Action",
+	"PositionApplied": "Project Coordinator",
+	"KeyActions": "Respons quickly",
+	"TargetDescription": "Taking prompt action to accomplish objectives; taking action to achieve goals beyond what is required; being proactive"
+}, {
+	"KeyActions": "Takes independent action",
+	"TargetID": "PCIA",
+	"PositionApplied": "Project Coordinator",
+	"TargetName": "Initiating Action",
+	"TargetDescription": "Taking prompt action to accomplish objectives; taking action to achieve goals beyond what is required; being proactive"
+}, {
+	"KeyActions": "Goes above and beyond",
+	"TargetID": "PCIA",
+	"PositionApplied": "Project Coordinator",
+	"TargetName": "Initiating Action",
+	"TargetDescription": "Taking prompt action to accomplish objectives; taking action to achieve goals beyond what is required; being proactive"
+}, {
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCAL",
+	"TargetName": "Applied Learning"
+}, {
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCCM",
+	"TargetName": "Communication"
+}, {
+	"TargetName": "Decision Making",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCDM"
+}, {
+	"TargetName": "Customer Focus",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCCF"
+}, {
+	"TargetName": "Motivational Fit",
+	"PositionApplied": "Project Coordinator",
+	"TargetID": "PCMF"
+}]

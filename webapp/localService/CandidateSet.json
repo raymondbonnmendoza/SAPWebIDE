@@ -1,0 +1,13 @@
+[{
+	"CandidateID": "C001",
+	"PositionApplied": "Project Coordinator",
+	"Status": "Post-Interview",
+	"TotalPoints": 25,
+	"CandidateName": "Chris Jones"
+}, {
+	"CandidateID": "C002",
+	"PositionApplied": "Project Coordinator",
+	"Status": "Post-Interview",
+	"TotalPoints": 26,
+	"CandidateName": "Eli Gold"
+}]

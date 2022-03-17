@@ -1,0 +1,91 @@
+[{
+	"CandidateID": "C001",
+	"TargetID": "PCPO",
+	"SituationTask": "Lots to do to get store ready; 2 people off sick; more prep than usual",
+	"Action": "Prioritized tasks based on customer impact--restocking, cleanup; did lower priority tasks throughout the day",
+	"Result": "Store fully stocked, clean when open",
+	"Rating": "3"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCPO",
+	"SituationTask": "Previous person had only trained most exp. people; when poeople called off--hectic, miserable",
+	"Action": "Cross-trained team in all tasks--opening and closing store, balancing register",
+	"Result": "No crunches since--people said jobs more interesting",
+	"Rating": "3"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCPO",
+	"SituationTask": "Coordinating Gala 3 months before event; main planner left without plan",
+	"Action": "Made a plan--identified top activities, time, milestones, resources; presented to board",
+	"Result": "Event was well organized; donor goal was hit",
+	"Rating": "3"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCIA",
+	"SituationTask": "Tie merchandising with Penguin walk",
+	"Action": "Suggested having stuffed penguins displayed in walk path",
+	"Result": "Increased sales by 10%",
+	"Rating": "4"
+}, {
+	"SituationTask": "As a part-timer--saw some policy irelevant to customers",
+	"Action": "Inaction (not part of job)",
+	"Result": "No change",
+	"Rating": "4",
+	"CandidateID": "C001",
+	"TargetID": "PCIA"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCIA",
+	"SituationTask": "Improve ways of communication to donors",
+	"Action": "Implemented e-newsletter",
+	"Result": "Newsletter had positive feedback; increased donations by 3%",
+	"Rating": "4"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCAL",
+	"Rating": "4"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCCM",
+	"Rating": "3"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCDM",
+	"Rating": "3"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCCF",
+	"Rating": "4"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCMF",
+	"Rating": "4"
+}, {
+	"CandidateID": "C002",
+	"TargetID": "PCPO",
+	"Rating": "4"
+}, {
+	"Rating": "3",
+	"CandidateID": "C002",
+	"TargetID": "PCIA"
+}, {
+	"Rating": "3",
+	"CandidateID": "C002",
+	"TargetID": "PCAL"
+}, {
+	"Rating": "5",
+	"CandidateID": "C002",
+	"TargetID": "PCCM"
+}, {
+	"Rating": "4",
+	"CandidateID": "C002",
+	"TargetID": "PCDM"
+}, {
+	"Rating": "4",
+	"CandidateID": "C002",
+	"TargetID": "PCCF"
+}, {
+	"Rating": "3",
+	"CandidateID": "C002",
+	"TargetID": "PCMF"
+}]

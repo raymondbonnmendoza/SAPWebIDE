@@ -1,0 +1,64 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.sap.interview_summary.controller.TargetDetail">
+	<App>
+		<pages>
+			<Page title="Target Details" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<ObjectHeader title="{TargetName}" number="3" numberUnit="Rating">
+						<attributes>
+						<ObjectAttribute text="{TargetDescription}"/>
+						</attributes>
+					</ObjectHeader>
+					<List noDataText="Drop list items here" id="__list1" headerText="Key Actions">
+					    <items>
+					        <StandardListItem counter="0" id="__item3" title="{KeyActions}"/>
+					        <StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" counter="0" id="__item3_copy" title="Determines Tasks and Resources"/>
+					        <StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" counter="0" id="__item3_copy3" title="Schedules"/>
+					        <StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" counter="0" id="__item3_copy4" title="Leverages resources"/>
+					        <StandardListItem xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" counter="0" id="__item3_copy2" title="Stays focused"/></items>
+					</List>
+					<Table noDataText="Drop column list items here and columns in the area above" id="__table0">
+					    <items>
+					        <ColumnListItem counter="0" id="__item0">
+					            <cells>
+					                <Text text="Lots to do to get store ready; 2 people off sick; more prep than usual" maxLines="0" id="__text1"/>
+					                <Text text="Prioritized tasks based on customer impact--restocking, cleanup; did lower priority tasks throughout the day" maxLines="0" id="__text2"/>
+					                <Text text="Store fully stocked, clean when open" maxLines="0" id="__text3"/></cells>
+					        </ColumnListItem>
+					        <ColumnListItem counter="0" id="__item1">
+					            <cells>
+					                <Text text="Previous person had only trained most exp. people; when poeople called off--hectic, miserable" maxLines="0" id="__text4"/>
+					                <Text text="Cross-trained team in all tasks--opening and closing store, balancing register" maxLines="0" id="__text5"/>
+					                <Text text="No crunches since--people said jobs more interesting" maxLines="0" id="__text6"/></cells>
+					        </ColumnListItem>
+					        <ColumnListItem xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" counter="0" id="__item1_copy5">
+					            <cells>
+					                <Text text="Coordinating Gala 3 months before event; main planner left without plan" maxLines="0" id="__text4_copy5"/>
+					                <Text text="Made a plan--identified top activities, time, milestones, resources; presented to board" maxLines="0" id="__text5_copy5"/>
+					                <Text text="Event was well organized; donor goal was hit" maxLines="0" id="__text6_copy5"/>
+					                </cells>
+					            
+					        </ColumnListItem></items>
+					    <columns>
+					        <Column id="__column0">
+					            <header>
+					                <Label text="Situation/Task" id="__label0"/>
+					            </header>
+					        </Column>
+					        <Column id="__column1">
+					            <header>
+					                <Label text="Action" id="__label1"/>
+					            </header>
+					        </Column>
+					        <Column id="__column2">
+					            <header>
+					                <Label text="Result" id="__label2"/>
+					            </header>
+					        </Column></columns></Table>
+				</content>
+			<footer>
+			    <Bar id="__bar0"/>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

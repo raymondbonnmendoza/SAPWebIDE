@@ -1,0 +1,18 @@
+[{
+	"CandidateID": "C001",
+	"Type": "Graduate School",
+	"Years": 4,
+	"School": "Fuller College",
+	"Degree": "Bachelor of Arts, Communication"
+}, {
+	"CandidateID": "C002",
+	"Type": "College",
+	"Years": 4,
+	"School": "Ateneo De Naga University",
+	"Degree": "Bachelor of Science in Business Admininstration"
+}, {
+	"CandidateID": "C002",
+	"Type": "High School",
+	"Years": 4,
+	"School": "Camarines Sur High School"
+}]

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+            xmlns:sap="http://www.sap.com/Protocols/SAPData" Namespace="OData_Interview_Summary_Model">
+            <EntityType Name="Candidate">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="PositionApplied" Type="Edm.String"/>
+                <Property Name="Status" Type="Edm.String"/>
+                <Property Name="TotalPoints" Type="Edm.Decimal"/>
+                <Property Name="CandidateName" Nullable="false" Type="Edm.String"/>
+                <NavigationProperty FromRole="From_Candidate" Name="ScheduleSet" Relationship="OData_Interview_Summary_Model.CandidateSchedule" ToRole="To_Schedule"/>
+                <NavigationProperty FromRole="From_Candidate" Name="BackgroundEducSet" Relationship="OData_Interview_Summary_Model.CandidateBackgroundEduc" ToRole="To_BackgroundEduc"/>
+                <NavigationProperty FromRole="From_Candidate" Name="BackgroundWorkSet" Relationship="OData_Interview_Summary_Model.CandidateBackgroundWork" ToRole="To_BackgroundWork"/>
+                <NavigationProperty FromRole="From_Candidate" Name="AttachmentSet" Relationship="OData_Interview_Summary_Model.CandidateAttachment" ToRole="To_Attachment"/>
+                <NavigationProperty FromRole="From_Candidate" Name="CandidateRatingperTargetSet" Relationship="OData_Interview_Summary_Model.CandidateCandidateRatingperTarget" ToRole="To_CandidateRatingperTarget"/>
+            </EntityType>
+            <EntityType Name="Schedule">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="Type" Type="Edm.String"/>
+                <Property Name="Date" Type="Edm.DateTime"/>
+                <Property Name="Status" Type="Edm.String"/>
+                <Property Name="Notes" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="Attachment">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="AttachmentFileName" Type="Edm.String"/>
+                <Property Name="AttachmentExt" Type="Edm.String"/>
+                <Property Name="AttachmentContents" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="BackgroundEduc">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                    <PropertyRef Name="Type"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="Type" Nullable="false" Type="Edm.String"/>
+                <Property Name="Years" Type="Edm.String"/>
+                <Property Name="School" Type="Edm.String"/>
+                <Property Name="Degree" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="BackgroundWork">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                    <PropertyRef Name="Company"/>
+                    <PropertyRef Name="Position"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="Company" Type="Edm.String"/>
+                <Property Name="Position" Type="Edm.String"/>
+                <Property Name="DateFrom" Type="Edm.DateTime"/>
+                <Property Name="DateTo" Type="Edm.DateTime"/>
+            </EntityType>
+            <EntityType Name="Target">
+                <Key>
+                    <PropertyRef Name="TargetID"/>
+                </Key>
+                <Property Name="TargetID" Nullable="false" Type="Edm.String"/>
+                <Property Name="TargetName" Type="Edm.String"/>
+                <Property Name="TargetDescription" Type="Edm.String"/>
+                <Property Name="KeyActions" Type="Edm.String"/>
+            </EntityType>
+            <EntityType Name="CandidateRatingperTarget">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                    <PropertyRef Name="TargetID"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="TargetID" Nullable="false" Type="Edm.String"/>
+                <Property Name="TargetName" Type="Edm.String"/>
+                <Property Name="Rating" Type="Edm.Single"/>
+                <Property Name="Comments" Type="Edm.String"/>
+                <NavigationProperty FromRole="From_CandidateRatingperTarget" Name="TargetSet" Relationship="OData_Interview_Summary_Model.CandidateRatingperTargetTarget" ToRole="To_Target"/>
+                <NavigationProperty FromRole="From_CandidateRatingperTarget" Name="CandidateAnswersperTargetSet" Relationship="OData_Interview_Summary_Model.CandidateRatingperTargetCandidateAnswersperTarget" ToRole="To_CandidateAnswersperTarget"/>
+            </EntityType>
+            <EntityType Name="CandidateAnswersperTarget">
+                <Key>
+                    <PropertyRef Name="CandidateID"/>
+                    <PropertyRef Name="TargetID"/>
+                </Key>
+                <Property Name="CandidateID" Nullable="false" Type="Edm.String"/>
+                <Property Name="TargetID" Nullable="false" Type="Edm.String"/>
+                <Property Name="SituationTask" Type="Edm.String"/>
+                <Property Name="Action" Type="Edm.String"/>
+                <Property Name="Result" Type="Edm.String"/>
+            </EntityType>
+            <Association Name="CandidateSchedule">
+                <End Multiplicity="1" Role="From_Candidate" Type="OData_Interview_Summary_Model.Candidate"/>
+                <End Multiplicity="*" Role="To_Schedule" Type="OData_Interview_Summary_Model.Schedule"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_Candidate">
+                        <PropertyRef Name="CandidateID"/>
+                    </Principal>
+                    <Dependent Role="To_Schedule">
+                        <PropertyRef Name="CandidateID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateBackgroundEduc">
+                <End Multiplicity="1" Role="From_Candidate" Type="OData_Interview_Summary_Model.Candidate"/>
+                <End Multiplicity="*" Role="To_BackgroundEduc" Type="OData_Interview_Summary_Model.BackgroundEduc"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_Candidate">
+                        <PropertyRef Name="CandidateID"/>
+                    </Principal>
+                    <Dependent Role="To_BackgroundEduc">
+                        <PropertyRef Name="CandidateID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateBackgroundWork">
+                <End Multiplicity="1" Role="From_Candidate" Type="OData_Interview_Summary_Model.Candidate"/>
+                <End Multiplicity="*" Role="To_BackgroundWork" Type="OData_Interview_Summary_Model.BackgroundWork"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_Candidate">
+                        <PropertyRef Name="CandidateID"/>
+                    </Principal>
+                    <Dependent Role="To_BackgroundWork">
+                        <PropertyRef Name="CandidateID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateAttachment">
+                <End Multiplicity="1" Role="From_Candidate" Type="OData_Interview_Summary_Model.Candidate"/>
+                <End Multiplicity="*" Role="To_Attachment" Type="OData_Interview_Summary_Model.Attachment"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_Candidate">
+                        <PropertyRef Name="CandidateID"/>
+                    </Principal>
+                    <Dependent Role="To_Attachment">
+                        <PropertyRef Name="CandidateID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateCandidateRatingperTarget">
+                <End Multiplicity="1" Role="From_Candidate" Type="OData_Interview_Summary_Model.Candidate"/>
+                <End Multiplicity="*" Role="To_CandidateRatingperTarget" Type="OData_Interview_Summary_Model.CandidateRatingperTarget"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_Candidate">
+                        <PropertyRef Name="CandidateID"/>
+                    </Principal>
+                    <Dependent Role="To_CandidateRatingperTarget">
+                        <PropertyRef Name="CandidateID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateRatingperTargetTarget">
+                <End Multiplicity="1" Role="From_CandidateRatingperTarget" Type="OData_Interview_Summary_Model.CandidateRatingperTarget"/>
+                <End Multiplicity="*" Role="To_Target" Type="OData_Interview_Summary_Model.Target"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_CandidateRatingperTarget">
+                        <PropertyRef Name="CandidateID"/>
+                        <PropertyRef Name="TargetID"/>
+                    </Principal>
+                    <Dependent Role="To_Target">
+                        <PropertyRef Name="CandidateID"/>
+                        <PropertyRef Name="TargetID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="CandidateRatingperTargetCandidateAnswersperTarget">
+                <End Multiplicity="1" Role="From_CandidateRatingperTarget" Type="OData_Interview_Summary_Model.CandidateRatingperTarget"/>
+                <End Multiplicity="*" Role="To_CandidateAnswersperTarget" Type="OData_Interview_Summary_Model.CandidateAnswersperTarget"/>
+                <ReferentialConstraint>
+                    <Principal Role="From_CandidateRatingperTarget">
+                        <PropertyRef Name="CandidateID"/>
+                        <PropertyRef Name="TargetID"/>
+                    </Principal>
+                    <Dependent Role="To_CandidateAnswersperTarget">
+                        <PropertyRef Name="CandidateID"/>
+                        <PropertyRef Name="TargetID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="default" m:IsDefaultEntityContainer="true">
+                <EntitySet EntityType="OData_Interview_Summary_Model.Candidate" Name="CandidateSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.Schedule" Name="ScheduleSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.Attachment" Name="AttachmentSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.BackgroundEduc" Name="BackgroundEducSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.BackgroundWork" Name="BackgroundWorkSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.Target" Name="TargetSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.CandidateRatingperTarget" Name="CandidateRatingperTargetSet"/>
+                <EntitySet EntityType="OData_Interview_Summary_Model.CandidateAnswersperTarget" Name="CandidateAnswersperTargetSet"/>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateSchedule" Name="CandidateScheduleSet">
+                    <End EntitySet="CandidateSet" Role="From_Candidate"/>
+                    <End EntitySet="ScheduleSet" Role="To_Schedule"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateBackgroundEduc" Name="CandidateBackgroundEducSet">
+                    <End EntitySet="CandidateSet" Role="From_Candidate"/>
+                    <End EntitySet="BackgroundEducSet" Role="To_BackgroundEduc"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateBackgroundWork" Name="CandidateBackgroundWorkSet">
+                    <End EntitySet="CandidateSet" Role="From_Candidate"/>
+                    <End EntitySet="BackgroundWorkSet" Role="To_BackgroundWork"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateAttachment" Name="CandidateAttachmentSet">
+                    <End EntitySet="CandidateSet" Role="From_Candidate"/>
+                    <End EntitySet="AttachmentSet" Role="To_Attachment"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateCandidateRatingperTarget" Name="CandidateCandidateRatingperTargetSet">
+                    <End EntitySet="CandidateSet" Role="From_Candidate"/>
+                    <End EntitySet="CandidateRatingperTargetSet" Role="To_CandidateRatingperTarget"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateRatingperTargetTarget" Name="CandidateRatingperTargetTargetSet">
+                    <End EntitySet="CandidateRatingperTargetSet" Role="From_CandidateRatingperTarget"/>
+                    <End EntitySet="TargetSet" Role="To_Target"/>
+                </AssociationSet>
+                <AssociationSet Association="OData_Interview_Summary_Model.CandidateRatingperTargetCandidateAnswersperTarget" Name="CandidateRatingperTargetCandidateAnswersperTargetSet">
+                    <End EntitySet="CandidateRatingperTargetSet" Role="From_CandidateRatingperTarget"/>
+                    <End EntitySet="CandidateAnswersperTargetSet" Role="To_CandidateAnswersperTarget"/>
+                </AssociationSet>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

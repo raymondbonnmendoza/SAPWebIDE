@@ -1,0 +1,33 @@
+[{
+	"CandidateID": "C001",
+	"Type": "Graduate School:"
+}, {
+	"CandidateID": "C001",
+	"Type": "College:",
+	"Years": "4 Years",
+	"School": "Fuller College",
+	"Degree": "Bachelor of Arts, Communication"
+}, {
+	"CandidateID": "C001",
+	"Type": "Technical School:"
+}, {
+	"CandidateID": "C001",
+	"Type": "High School:"
+}, {
+	"CandidateID": "C002",
+	"Type": "Graduate School:"
+}, {
+	"CandidateID": "C002",
+	"Type": "College:",
+	"Years": "4 Years",
+	"School": "Ateneo De Naga University",
+	"Degree": "Bachelor of Science in Business Administration"
+}, {
+	"CandidateID": "C002",
+	"Type": "Technical School:"
+}, {
+	"CandidateID": "C002",
+	"Type": "High School:",
+	"Years": "4 Years",
+	"School": "Camarines Sur High School"
+}]

@@ -1,0 +1,77 @@
+[{
+	"CandidateID": "C001",
+	"TargetID": "PCPO",
+	"SituationTask": "Lots to do to get store ready; 2 people off sick; more prep than usual",
+	"Action": "Prioritized tasks based on customer impact--restocking, cleanup; did lower priority tasks throughout the day",
+	"Result": "Store fully stocked, clean when open",
+	"Rating": 3.1,
+	"TargetName": "Planning and Organizing"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCIA",
+	"SituationTask": "Tie merchandising with Penguin walk",
+	"Action": "Suggested having stuffed penguins displayed in walk path",
+	"Result": "Increased sales by 10%",
+	"Rating": 4.1,
+	"TargetName": "Initiating Action"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCAL",
+	"Rating": 4.1,
+	"TargetName": "Applied Learning"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCCM",
+	"Rating": 3.1,
+	"TargetName": "Communication"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCDM",
+	"Rating": 3.1,
+	"TargetName": "Decision Making"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCCF",
+	"Rating": 4.1,
+	"TargetName": "Customer Focus"
+}, {
+	"CandidateID": "C001",
+	"TargetID": "PCMF",
+	"Rating": 4.1,
+	"TargetName": "Motivational Fit"
+}, {
+	"CandidateID": "C002",
+	"TargetID": "PCPO",
+	"Rating": 4.1,
+	"TargetName": "Planning and Organizing"
+}, {
+	"Rating": 3.1,
+	"CandidateID": "C002",
+	"TargetID": "PCIA",
+	"TargetName": "Initiating Action"
+}, {
+	"Rating": 3.1,
+	"CandidateID": "C002",
+	"TargetID": "PCAL",
+	"TargetName": "Applied Learning"
+}, {
+	"Rating": 5.1,
+	"CandidateID": "C002",
+	"TargetID": "PCCM",
+	"TargetName": "Communication"
+}, {
+	"Rating": 4.1,
+	"CandidateID": "C002",
+	"TargetID": "PCDM",
+	"TargetName": "Decision Making"
+}, {
+	"Rating": 4.1,
+	"CandidateID": "C002",
+	"TargetID": "PCCF",
+	"TargetName": "Customer Focus"
+}, {
+	"Rating": 3.1,
+	"CandidateID": "C002",
+	"TargetID": "PCMF",
+	"TargetName": "Motivational Fit"
+}]

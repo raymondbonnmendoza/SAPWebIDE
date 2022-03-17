@@ -1,0 +1,30 @@
+[{
+	"CandidateID": "C001",
+	"Type": "Phone Interview",
+	"Date": "/Date(1460354400000)/",
+	"Status": "Completed",
+	"Notes": "Current Salary: $xx,xxx.00"
+}, {
+	"CandidateID": "C001",
+	"Type": "Written Exam",
+	"Date": "/Date(1460527200000)/",
+	"Status": "Completed",
+	"Notes": "Passed: 85%"
+}, {
+	"CandidateID": "C001",
+	"Type": "Technical Interview",
+	"Date": "/Date(1460700000000)/",
+	"Status": "Completed",
+	"Notes": "Good Overall"
+}, {
+	"CandidateID": "C001",
+	"Type": "Behavioral Interview",
+	"Date": "/Date(1461132000000)/",
+	"Status": "Completed",
+	"Notes": "For Review"
+}, {
+	"CandidateID": "C001",
+	"Type": "Job Offer Meeting",
+	"Date": "/Date(1461564000000)/",
+	"Status": "Scheduled"
+}]

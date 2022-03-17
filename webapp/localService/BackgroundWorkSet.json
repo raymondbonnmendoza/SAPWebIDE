@@ -1,0 +1,25 @@
+[{
+	"CandidateID": "C001",
+	"Company": "Metro Zoo and Aquarium",
+	"Position": "Senior Sales Associate",
+	"DateFrom": "/Date(1451577600000)/",
+	"DateTo": "/Date(1460995200000)/"
+}, {
+	"CandidateID": "C001",
+	"Company": "Metro Zoo and Aquarium",
+	"Position": "Sales Associate",
+	"DateFrom": "/Date(1388505600000)/",
+	"DateTo": "/Date(1451491200000)/"
+}, {
+	"CandidateID": "C002",
+	"Company": "Global Solutions",
+	"Position": "Business Solutions Associate",
+	"DateFrom": "/Date(1407427200000)/",
+	"DateTo": "/Date(1460995200000)/"
+}, {
+	"CandidateID": "C002",
+	"Company": "Accenture Inc.",
+	"Position": "Project Management Analyst",
+	"DateFrom": "/Date(1399219200000)/",
+	"DateTo": "/Date(1407427200000)/"
+}]

@@ -1,0 +1,169 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="com.sap.interview_summary.controller.Detail"
+          xmlns:commons="sap.suite.ui.commons">
+
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{CandidateName}" number="{TotalPoints}" intro="{CandidateID}" numberUnit="Total Points">
+			<attributes>
+			    <ObjectAttribute text="{PositionApplied}" active="false" id="__attribute0"/>
+			</attributes>
+			<firstStatus>
+			    <ObjectStatus id="__status0" text="{Status}"/>
+			</firstStatus>
+			</ObjectHeader>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://appointment" tooltip="{i18n>detailIconTabBarInfo}" text="Schedule">
+					<Panel>
+					    <commons:Timeline 
+                			id="idTimeline"
+               		 	   	enableScroll="false"
+                			width="30%"
+                		 	content="{path: 'ScheduleSet'}">
+				            <commons:content>
+					            <commons:TimelineItem 
+						            id="idTimelineItem" 
+						            dateTime="{Date}"
+						            userName="{Type}" 
+						            title="{Status}" 
+						            icon="sap-icon://activity-items"
+						            text="{Notes}">
+					            </commons:TimelineItem>
+			            	</commons:content>
+                        </commons:Timeline>
+                    </Panel>
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}" count="1" text="Attachments">
+					<content>
+					    <List noDataText="Drop list items here" id="__list0" items="{path: 'AttachmentSet'}">
+					        <items>
+					            <StandardListItem type="Active" counter="0" icon="sap-icon://pdf-attachment" id="__item1" title="{AttachmentFileName}.{AttachmentExt}"/></items>
+					    </List>
+					</content>
+					</IconTabFilter>
+					<IconTabFilter text="Background" icon="sap-icon://employee-lookup" id="__filter0">
+					<content>
+					    <Table noDataText="Drop column list items here and columns in the area above" id="__table1" headerText="Educational Background" items="{path: 'BackgroundEducSet'}">
+					        <items>
+					            <ColumnListItem counter="0" id="__item2">
+					                <cells>
+					                    <Text text="{Type}"   maxLines="0" id="__text2"/>
+					                    <Text text="{Years}"  maxLines="0" id="__text4"/>
+					                    <Text text="{School}" maxLines="0" id="__text5"/>
+					                    <Text text="{Degree}" maxLines="0" id="__text5_copy"/></cells>
+					            </ColumnListItem></items>
+					        <columns>
+					            <Column id="__column3">
+					                <header>
+					                    <Label id="__label3"/>
+					                </header>
+					            </Column>
+					            <Column id="__column4">
+					                <header>
+					                    <Label id="__label4"/>
+					                </header>
+					            </Column>
+					            <Column id="__column6">
+					                <header>
+					                    <Text maxLines="0" id="__text9"/>
+					                </header>
+					            </Column>
+					            <Column id="__column5">
+					                <header>
+					                    <Label id="__label5"/>
+					                </header>
+					            </Column></columns></Table>
+					    <Table noDataText="Drop column list items here and columns in the area above" id="__table3" headerText="Work History" items="{path: 'BackgroundWorkSet'}">
+					        <items>
+					            <ColumnListItem counter="0" id="__item5">
+					                <cells>
+					                    <Text text="Job:"       maxLines="0" id="__text13"/>
+					                    <Text text="{Company}"  maxLines="0" id="__text14"/>
+					                    <Text text="{Position}" maxLines="0" id="__text15"/>
+					                    <Text text="{path: 'DateFrom', 
+                                                     type: 'sap.ui.model.type.DateTime',
+                                                     formatOptions: {pattern: 'yyyy/MM/dd'} 
+                                                     }-{path: 'DateTo', 
+                                                     type: 'sap.ui.model.type.DateTime',
+                                                     formatOptions: {pattern: 'yyyy/MM/dd'} 
+                                                     }" maxLines="0" id="__text20"/></cells>
+					            </ColumnListItem></items>
+					        <columns>
+					            <Column id="__column10">
+					                <header>
+					                    <Label id="__label9"/>
+					                </header>
+					            </Column>
+					            <Column id="__column11">
+					                <header>
+					                    <Label id="__label10"/>
+					                </header>
+					            </Column>
+					            <Column id="__column12">
+					                <header>
+					                    <Label id="__label11"/>
+					                </header>
+					            </Column>
+					            <Column id="__column13">
+					                <header>
+					                    <Text maxLines="0" id="__text19"/>
+					                </header>
+					            </Column></columns></Table>
+					</content>
+					</IconTabFilter>
+					<IconTabFilter text="Rating" icon="sap-icon://horizontal-bar-chart-2" id="__filter1">
+					    <content>
+					        <Table noDataText="Drop column list items here and columns in the area above" id="__table0" headerText="Rating Grid" items="{path: 'CandidateRatingperTargetSet'}">
+					            <items>
+					                <ColumnListItem counter="0" id="__item0" type="Navigation" press="onPress">
+					                    <cells>
+					                        <Text text="{TargetName}" maxLines="0" id="__text1"/>
+					                        <RatingIndicator enabled="false" ariaLabelledBy="__xmlview0--__label1" id="__indicator0" value="{Rating}"/>
+					                        <Text text="{Comments}" maxLines="0" id="__text3"/></cells>
+					                </ColumnListItem></items>
+					            <columns>
+					                <Column id="__column0">
+					                    <header>
+					                        <Label text="Assigned Targets" id="__label0"/>
+					                    </header>
+					                </Column>
+					                <Column id="__column1">
+					                    <header>
+					                        <Label text="Rating" id="__label1"/>
+					                    </header>
+					                </Column>
+					                <Column id="__column2">
+					                    <header>
+					                        <Label text="Comments" id="__label2"/>
+					                    </header>
+					                </Column></columns></Table>
+					    </content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+
+	<semantic:customFooterContent>
+
+	    <Button text="Accept" width="100px" id="__button0" type="Accept"/>
+
+	    <Button text="Reject" width="100px" id="__button1" type="Reject"/>
+
+	</semantic:customFooterContent>
+
+	</semantic:DetailPage>
+
+</mvc:View>
