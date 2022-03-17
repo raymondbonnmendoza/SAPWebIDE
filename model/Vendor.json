@@ -1,0 +1,116 @@
+[{
+	"VendorID": "1001000010",
+	"Name1": "The Freezing Cow Holdings ",
+	"Name2": "Manufacturing",
+	"Name3": "Foods and Drinks",
+	"Address": "A823, Dunfermline, Fife KY11 8PA, UK",
+	"Telephone": "+1-202-555-0169",
+	"Fax": "+1-202-555-0175",
+	"ContactPerson": "Lyndsey Suggitt",
+	"__metadata": {
+		"uri": "Vendors('1001000010')",
+		"type": "OData_Subcon_Stock_Model.Vendor"
+	},
+	"Components": {
+		"__deferred": {
+			"uri": "Vendors('1001000010')/Components"
+		}
+	},
+	"POHeaders": {
+		"__deferred": {
+			"uri": "Vendors('1001000010')/POHeaders"
+		}
+	}
+}, {
+	"VendorID": "1001000012",
+	"Name1": "Happy Squirrel Holdings",
+	"Name2": "Manufacturing",
+	"Name3": "Snacks",
+	"Address": "2 Middle Road, Ingrave, Brentwood, Essex CM13, UK",
+	"Telephone": "+1-202-555-0169",
+	"Fax": "+1-202-555-0175",
+	"ContactPerson": "Al Abbott",
+	"__metadata": {
+		"uri": "Vendors('1001000012')",
+		"type": "OData_Subcon_Stock_Model.Vendor"
+	},
+	"Components": {
+		"__deferred": {
+			"uri": "Vendors('1001000012')/Components"
+		}
+	},
+	"POHeaders": {
+		"__deferred": {
+			"uri": "Vendors('1001000012')/POHeaders"
+		}
+	}
+}, {
+	"VendorID": "1001000014",
+	"Name1": "Foggy Fox Philippines",
+	"Name2": "Manufacturing",
+	"Name3": "Foods and Drinks",
+	"Address": "5 Orchard Close, Longburton, Sherborne, Dorset DT9 5PP, UK",
+	"Telephone": "+1-202-555-0169",
+	"Fax": "+1-202-555-0175",
+	"ContactPerson": "Maddie Terrell",
+	"__metadata": {
+		"uri": "Vendors('1001000014')",
+		"type": "OData_Subcon_Stock_Model.Vendor"
+	},
+	"Components": {
+		"__deferred": {
+			"uri": "Vendors('1001000014')/Components"
+		}
+	},
+	"POHeaders": {
+		"__deferred": {
+			"uri": "Vendors('1001000014')/POHeaders"
+		}
+	}
+}, {
+	"VendorID": "1001000016",
+	"Name1": "The Cloudy Pen Philippines ",
+	"Name2": "Manufacturing",
+	"Name3": "Snacks",
+	"Address": "Unnamed Road, Beaworthy, Devon EX21 5TX, UK",
+	"Telephone": "+1-202-555-0169",
+	"Fax": "+1-202-555-0175",
+	"ContactPerson": "Annabeth Simpkin",
+	"__metadata": {
+		"uri": "Vendors('1001000016')",
+		"type": "OData_Subcon_Stock_Model.Vendor"
+	},
+	"Components": {
+		"__deferred": {
+			"uri": "Vendors('1001000016')/Components"
+		}
+	},
+	"POHeaders": {
+		"__deferred": {
+			"uri": "Vendors('1001000016')/POHeaders"
+		}
+	}
+}, {
+	"VendorID": "1001000018",
+	"Name1": "Small Frog Incorporated",
+	"Name2": "Manufacturing",
+	"Name3": "Foods and Drinks",
+	"Address": "Nantong Way, Bon-y-maen, Swansea, Swansea SA1, UK",
+	"Telephone": "+1-202-555-0169",
+	"Fax": "+1-202-555-0175",
+	"ContactPerson": "Prince Pocock",
+	"__metadata": {
+		"uri": "Vendors('1001000018')",
+		"type": "OData_Subcon_Stock_Model.Vendor"
+	},
+	"Components": {
+		"__deferred": {
+			"uri": "Vendors('1001000018')/Components"
+		}
+	},
+	"POHeaders": {
+		"__deferred": {
+			"uri": "Vendors('1001000018')/POHeaders"
+		}
+	}
+}]

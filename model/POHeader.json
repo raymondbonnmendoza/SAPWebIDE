@@ -1,0 +1,57 @@
+[{
+	"VendorID": "1001000010",
+	"POID": "4500000001",
+	"UOM": "PC",
+	"Quantity": 1000,
+	"Received": 500,
+	"Balance": 500
+}, {
+	"VendorID": "1001000010",
+	"POID": "4500000002",
+	"UOM": "PC",
+	"Quantity": 2000,
+	"Received": 1500,
+	"Balance": 500
+}, {
+	"VendorID": "1001000010",
+	"POID": "4500000003",
+	"UOM": "PC",
+	"Quantity": 500,
+	"Received": 250,
+	"Balance": 250
+}, {
+	"VendorID": "1001000012",
+	"POID": "4500000004",
+	"UOM": "PC",
+	"Quantity": 5000,
+	"Received": 3000,
+	"Balance": 2000
+}, {
+	"VendorID": "1001000012",
+	"POID": "4500000005",
+	"UOM": "PC",
+	"Quantity": 3000,
+	"Received": 1000,
+	"Balance": 2000
+}, {
+	"VendorID": "1001000014",
+	"POID": "4500000006",
+	"UOM": "PC",
+	"Quantity": 200,
+	"Received": 100,
+	"Balance": 100
+}, {
+	"VendorID": "1001000016",
+	"POID": "4500000007",
+	"UOM": "PC",
+	"Quantity": 750,
+	"Received": 500,
+	"Balance": 250
+}, {
+	"VendorID": "1001000018",
+	"POID": "4500000008",
+	"UOM": "PC",
+	"Quantity": 500,
+	"Received": 250,
+	"Balance": 250
+}]

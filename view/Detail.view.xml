@@ -1,0 +1,225 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" controllerName="subcon_stock_tracking_ns.view.Detail">
+    <Page id="detailPage" navButtonPress="onNavBack" title="{i18n&gt;detailTitle}" showNavButton="{device&gt;/isPhone}">
+        <content>
+            <ObjectHeader id="detailHeader" title="{Name1}" number="{VendorID}" numberUnit="" introActive="false" titleActive="false" iconActive="false">
+                <customData id="customData3">
+                    <core:CustomData id="coreCustomData3" key="sapDtResourcePath" value="Vendors">
+                    </core:CustomData>
+                </customData>
+                <attributes id="detailAttributes">                
+                    <ObjectAttribute id="attribute" active="false" text="{Name3}" title="">
+                    </ObjectAttribute>
+                </attributes>
+                <firstStatus id="detailStatus">
+                    <ObjectStatus id="status" text="">
+                        <customData id="customData4">
+                            <core:CustomData id="coreCustomData4" key="sapDtResourcePath" value="Vendors">
+                            </core:CustomData>
+                        </customData>
+                    </ObjectStatus>
+                </firstStatus>
+            </ObjectHeader>
+           
+            <IconTabBar id="idIconTabBar" expanded="{device&gt;/isNoPhone}">
+                <customData id="customData5">
+                    <core:CustomData id="coreCustomData5" key="sapDtResourcePath" value="Vendors">
+                    </core:CustomData>
+                </customData>
+    			<items id="detailsItems">
+                    
+                    <IconTabFilter id="iconTabFilter1" key="selfInfo" icon="sap-icon://hint">
+                        <content>
+							<f:SimpleForm id="iconTabFilter1form" minWidth="1024" editable="false" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1">
+								<f:content>
+									<Label id="label1" text="Address">
+									</Label>
+									<Text id="text1" text="{Address}" maxLines="0">
+										<customData id="customData6">
+											<core:CustomData id="coreCustomData6" key="sapDtResourcePath" value="Vendors">
+											</core:CustomData>
+										</customData>
+									</Text>
+									<Label id="label2" text="Telephone">
+									</Label>
+									<Text id="text2" text="{Telephone}" maxLines="0">
+										<customData id="customData7">
+											<core:CustomData id="coreCustomData7" key="sapDtResourcePath" value="Vendors">
+											</core:CustomData>
+										</customData>
+									</Text>
+									<Label id="label3" text="Fax">
+									</Label>
+									<Text id="text3" text="{Fax}" maxLines="0">
+										<customData id="customData8">
+											<core:CustomData id="coreCustomData8" key="sapDtResourcePath" value="Vendors">
+											</core:CustomData>
+										</customData>
+									</Text>
+									<Label id="label4" text="Contact Person">
+									</Label>
+									<Text id="text4" text="{ContactPerson}" maxLines="0">
+										<customData id="customData9">
+											<core:CustomData id="coreCustomData9" key="sapDtResourcePath" value="Vendors">
+											</core:CustomData>
+										</customData>
+									</Text>
+								    <Label id="label5" text="Email">
+									</Label>
+									<Text id="text5" text="{Email}" maxLines="0">
+										<customData id="customData10">
+											<core:CustomData id="coreCustomData10" key="sapDtResourcePath" value="Vendors">
+											</core:CustomData>
+										</customData>
+									</Text>
+									<core:ExtensionPoint name="extIconTabFilterForm1"/>
+								</f:content>
+							</f:SimpleForm>
+							
+                            <Table id="POHeaders" headerText="{i18n&gt;POTitle} ({POCount})"   
+                                   itemPress="onPOItemPress"
+                                   items="{path: 'POHeaders'}">
+                                <columns>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="PO Number" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="UOM" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="PO Quantity" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Received Quantity" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Balance" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem type="Navigation">
+                                    <cells>
+                                        <Text text="{POID}" />
+                                        <Text text="{UOM}" />
+                                        <Text text="{Quantity}" />
+                                        <Text text="{Received}" />
+                                        <Text text="{Balance}" />
+                                    </cells>
+                                    </ColumnListItem>
+                                 </items>
+                            </Table>
+
+                        </content>
+                    </IconTabFilter>
+                    <IconTabFilter id="iconTabFilter2" key="" icon="sap-icon://inventory">
+                        <content>
+                            <DateRangeSelection
+                                id="DRS1"
+                                delimiter="{path:'/delimiterDRS1'}"
+                                dateValue="{path:'/dateValueDRS1'}"
+                                secondDateValue="{path:'/secondDateValueDRS1'}"
+                                displayFormat="{path:'/dateFormatDRS1'}"
+                                change="handleChange"
+                                class="sapUiMediumMarginBottom"
+                            />
+                            <Table id="Components" headerText="{i18n&gt;componentsTitle}" 
+                                   itemPress=""
+                                   items="{path: 'Components'}">
+                                <columns>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="Material" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="Description" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="Date" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="UOM" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Issuances" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Consumption" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Material}" />
+                                        <Text text="{Description}" />
+                                        <Text text="{path: 'Date', 
+                                                     type: 'sap.ui.model.type.DateTime',
+                                                     formatOptions: {pattern: 'yyyy/MM/dd'} 
+                                                     }" />
+                                        <Text text="{UOM}" />
+                                        <Text text="{Issuances}" />
+                                        <Text text="{Consumption}" />
+                                    </cells>
+                                    </ColumnListItem>
+                                 </items>
+                            </Table>
+                        
+						</content>
+                    </IconTabFilter>
+                    <IconTabFilter id="iconTabFilter3" key="" icon="sap-icon://attachment">
+                        <content>
+                            <List 
+                                id="AttachmentList"
+                                headerText="Attachments ({AttachmentCount})"
+                                items="{path: 'Attachments'}">
+                                <items>
+                                  <StandardListItem
+                                    title="{Filename}"
+                                    press="onAttachmentItemPress"
+                                    type="Active"
+                                    description="{path: 'Date', 
+                                                  type: 'sap.ui.model.type.DateTime',
+                                                  formatOptions: {pattern: 'yyyy/MM/dd'} 
+                                                  } by {CreatedBy}"
+                                    icon="sap-icon://pdf-attachment"
+                                  />
+                                </items>
+                              </List>
+						</content>
+                    </IconTabFilter>
+    				<core:ExtensionPoint name="extIconTabFilter"/>
+                </items>
+            </IconTabBar>
+    		<core:ExtensionPoint name="extDetail"/>
+        </content>
+        <footer id="detailFooter">
+            <Toolbar id="detailToolbar">
+                <content>
+                    <ToolbarSpacer id="toolbarSpacer">
+                    </ToolbarSpacer>
+                    <Button id="actionButton" press="openActionSheet" icon="sap-icon://action">
+                    </Button>
+                </content>
+            </Toolbar>
+        </footer>
+    <customData><core:CustomData key="sapDtResourcePath" value="Vendors"/></customData></Page>
+</mvc:View>

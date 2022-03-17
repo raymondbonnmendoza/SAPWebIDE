@@ -1,0 +1,45 @@
+<mvc:View xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="subcon_stock_tracking_ns.view.Master">
+    <Page id="masterPage" title="{title&gt;/master}" showNavButton="true">
+        <subHeader id="masterSubHeader">
+            <Bar id="searchBar">
+                <contentMiddle>
+                    <SearchField id="searchField" search="onSearch" width="100%" placeholder="{i18n&gt;masterSearchPlaceholder}" showRefreshButton="{device&gt;/isNoTouch}" tooltip="{i18n&gt;masterSearchTooltip}">
+                    </SearchField>
+                </contentMiddle>
+            </Bar>
+        </subHeader>
+        <content>
+            <List id="list" select="onSelect" mode="{device&gt;/listMode}" noDataText="{i18n&gt;masterListNoDataText}" growing="true" growingScrollToLoad="true" items="{/Vendors}">
+                <customData id="customData1">
+                    <core:CustomData id="coreCustomData1" key="sapDtResourcePath" value="Vendors">
+                    </core:CustomData>
+                </customData>
+                <items id="masterList">
+                    <ObjectListItem id="mainListItem" press="onSelect" type="{device&gt;/listItemType}" counter="0" 
+                        title="{Name1}" 
+                        number="{VendorID}" 
+                        numberUnit="" markFavorite="false" markFlagged="false" showMarkers="false"
+                        intro="{Name2}">
+                        <attributes>
+						    <ObjectAttribute />
+						    <ObjectAttribute text="{POCount} Open Purchase Order(s)" />
+					    </attributes>
+                        <customData id="customData2">
+                            <core:CustomData id="coreCustomData2" key="sapDtResourcePath" value="Vendors">
+                            </core:CustomData>
+                        </customData>
+                        <core:ExtensionPoint name="extListItemInfo"/>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer id="masterFooter">
+            <Toolbar id="masterToolbar">
+                <content>
+                    <footerbar:SettingsButton id="settingsButton" icon="sap-icon://action-settings" tooltip="Help">
+                    </footerbar:SettingsButton>
+                </content>
+            </Toolbar>
+        </footer>
+    <customData><core:CustomData key="sapDtResourcePath" value="Vendors"/></customData></Page>
+</mvc:View>

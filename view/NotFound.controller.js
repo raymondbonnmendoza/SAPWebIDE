@@ -1,0 +1,1 @@
+sap.ui.core.mvc.Controller.extend("subcon_stock_tracking_ns.view.NotFound", {});

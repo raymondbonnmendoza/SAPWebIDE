@@ -1,0 +1,8 @@
+<mvc:View
+	controllerName="subcon_stock_tracking_ns.view.App"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m">
+	<SplitApp 
+	    id="idAppControl" />
+</mvc:View>

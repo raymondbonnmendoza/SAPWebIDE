@@ -1,0 +1,61 @@
+<core:View xmlns:core="sap.ui.core" 
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m" controllerName="subcon_stock_tracking_ns.view.POItem" 
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Purchase Order" navButtonPress="onNavBack" showNavButton="true">
+		<content>
+		    <Table id="POItems" headerText="PO {POID} Items ({ItemCount})" 
+                itemPress=""
+                items="{path: 'POItems'}">
+                                <columns>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="Item" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="Description" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true">
+                                        <Text text="UOM" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Quantity" />
+                                    </Column>
+                                    <Column
+                                        minScreenWidth="Tablet"
+                                        demandPopin="true" hAlign="Right">
+                                        <Text text="Received" />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Item}" />
+                                        <Text text="{Description}" />
+                                        <Text text="{UOM}" />
+                                        <Text text="{Quantity}" />
+                                        <Text text="{Received}" />
+                                    </cells>
+                                    </ColumnListItem>
+                                 </items>
+                            </Table>
+		</content>
+		<footer id="detailFooter">
+            <Toolbar id="detailToolbar">
+                <content>
+                    <ToolbarSpacer id="toolbarSpacer">
+                    </ToolbarSpacer>
+                    <Button id="actionButton" press="openActionSheet" icon="sap-icon://action">
+                    </Button>
+                </content>
+            </Toolbar>
+        </footer>
+	</Page>
+</core:View>

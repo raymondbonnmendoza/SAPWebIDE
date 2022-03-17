@@ -1,0 +1,81 @@
+[{
+	"VendorID": "1001000010",
+	"Date": "/Date(1431360000000)/",
+	"Material": "5000000045",
+	"Description": "Material 45",
+	"UOM": "PC",
+	"Issuances": 500,
+	"Consumption": 500
+}, {
+	"VendorID": "1001000010",
+	"Date": "/Date(1431273600000)/",
+	"Material": "5000000046",
+	"Description": "Material 46",
+	"UOM": "PC",
+	"Issuances": 100,
+	"Consumption": 50
+}, {
+	"VendorID": "1001000012",
+	"Date": "/Date(1431446400000)/",
+	"Material": "5000000045",
+	"Description": "Material 45",
+	"UOM": "PC",
+	"Issuances": 300,
+	"Consumption": 200
+}, {
+	"VendorID": "1001000014",
+	"Date": "/Date(1431273600000)/",
+	"Material": "5000000045",
+	"Description": "Material 45",
+	"UOM": "PC",
+	"Issuances": 1000,
+	"Consumption": 750
+}, {
+	"VendorID": "1001000014",
+	"Date": "/Date(1431360000000)/",
+	"Material": "5000000046",
+	"Description": "Material 46",
+	"UOM": "PC",
+	"Issuances": 500,
+	"Consumption": 250
+}, {
+	"VendorID": "1001000016",
+	"Date": "/Date(1431446400000)/",
+	"Material": "5000000045",
+	"Description": "Material 45",
+	"UOM": "PC",
+	"Issuances": 300,
+	"Consumption": 125
+}, {
+	"VendorID": "1001000018",
+	"Date": "/Date(1431360000000)/",
+	"Material": "5000000045",
+	"Description": "Material 45",
+	"UOM": "PC",
+	"Issuances": 350,
+	"Consumption": 25
+}, {
+	"VendorID": "1001000018",
+	"Date": "/Date(1431446400000)/",
+	"Material": "5000000046",
+	"Description": "Material 46",
+	"UOM": "PC",
+	"Issuances": 400,
+	"Consumption": 250
+}, {
+	"VendorID": "1001000010",
+	"Date": "/Date(1434492000000)/",
+	"Material": "5000000047",
+	"Description": "Material 47",
+	"UOM": "PC",
+	"Issuances": 1000,
+	"Consumption": 500
+}, {
+	"VendorID": "1001000010",
+	"Date": "/Date(1433887200000)/",
+	"Material": "5000000047",
+	"Description": "Material 47",
+	"UOM": "PC",
+	"Issuances": 400,
+	"Consumption": 150
+}]
