@@ -1,0 +1,34 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="com.sap.demotest.view.Detail">
+	<Page showNavButton="{device>/isPhone}" navButtonPress="onNavBack" class="sapUiFioriObjectPage" title="{i18n>detailTitle}">
+		<content>
+			<HBox width="100%" id="__hbox0" justifyContent="Center">
+			    <items>
+			        <Button text="Take Photo" width="150px" id="__button0" press="capturePhoto"/>
+			        <Button text="Pick from gallery" width="150px" id="__button1" press="getPhoto"/>
+			    </items>
+			</HBox>
+			<HBox width="100%" id="__hbox1" justifyContent="Center">
+			    <items>
+			        <Image width="200px" height="200px" id="myImage"/>
+			    </items>
+			</HBox>
+			<ObjectHeader title="{Name}" number="{Price}" numberUnit="{ID}">
+				<ObjectAttribute text="{Name}"/>
+				<ObjectAttribute text="{Description}"/>
+			</ObjectHeader>
+			<IconTabBar select="onDetailSelect" id="idIconTabBar">
+				<items>
+					<IconTabFilter key="Supplier" text="Supplier" icon="sap-icon://hint">
+						<!--key="Detail" -->
+						<content>
+							<core:Fragment fragmentName="com.sap.demotest.view.DetailInfoForm" type="XML"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Toolbar/>
+		</footer>
+	</Page>
+</mvc:View>

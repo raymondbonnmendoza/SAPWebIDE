@@ -1,0 +1,418 @@
+{
+  "generation": [
+    {
+      "templateId": "fioritemplate.UI5masterDetailKapsel",
+      "templateVersion": "1.28.1",
+      "dateTimeStamp": "Thu, 19 May 2016 06:05:13 GMT"
+    }
+  ],
+  "mockpreview": {
+    "mockUri": "/destinations/Northwind/(S(m5vn4gpryznhvuilegydzm1l))/V2/OData/OData.svc",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "projectType": [
+    "com.sap.webide.hybrid.cordova",
+    "sap.watt.uitools.ide.fiori"
+  ],
+  "hybrid": {
+    "appname": "HybridAppwithCameraFunction",
+    "appid": "com.sap.demotest",
+    "appdesc": "",
+    "appversion": "1.0.0",
+    "debugMode": false,
+    "appIcon": {
+      "defaultIcon": "",
+      "ios": {
+        "ios8Iphone": "",
+        "ios7Iphone": "",
+        "ios7Ipad": "",
+        "ios61Iphone": "",
+        "ios61Ipad": ""
+      },
+      "android": {
+        "ldpi": "",
+        "mdpi": "",
+        "hdpi": "",
+        "xhdpi": ""
+      },
+      "windows": {
+        "s44": "",
+        "s71": "",
+        "s106": "",
+        "s150": "",
+        "s50": "",
+        "w310": ""
+      },
+      "defaultIconData": "",
+      "windows10": {
+        "s44": "",
+        "s71": "",
+        "s106": "",
+        "s150": "",
+        "s50": "",
+        "w310": ""
+      }
+    },
+    "appSplash": {
+      "enable": true,
+      "defaultSplash": "",
+      "useDefault": true,
+      "delayTime": "1000",
+      "ios": {
+        "iphone": "",
+        "iphone2x": "",
+        "portIpad": "",
+        "portIpad2x": "",
+        "landIpad": "",
+        "landIpad2x": "",
+        "iphone52x": "",
+        "iphone6": "",
+        "iphone6plus": ""
+      },
+      "android": {
+        "landhdpi": "",
+        "porthdpi": "",
+        "landldpi": "",
+        "portldpi": "",
+        "landmdpi": "",
+        "portmdpi": "",
+        "landxhdpi": "",
+        "portxhdpi": ""
+      },
+      "windows": {
+        "s100": "",
+        "s140": "",
+        "s240": ""
+      },
+      "defaultLandscapeSplash": "",
+      "defaultLSplashData": "",
+      "defaultPortraitSplash": "",
+      "defaultPSplashData": "",
+      "windows10": {
+        "s100": "",
+        "s140": "",
+        "s240": ""
+      }
+    },
+    "kapselLogon": {
+      "type": "",
+      "logo": "",
+      "logoText": "",
+      "background": "",
+      "disablePasscode": false
+    },
+    "useAppDescriptor4UI5Libs": false,
+    "localBuild": {
+      "useCustomLib": false,
+      "customLibFile": ""
+    },
+    "cloudBuild": {
+      "selected": null,
+      "buildType": "cordova",
+      "androidSigning": "",
+      "iosSigning": "",
+      "fioriClient": {
+        "launchUrl": "",
+        "defaultIconData": "",
+        "defaultSplashData": ""
+      },
+      "clearCache": false
+    },
+    "msType": 0,
+    "server": "",
+    "port": "",
+    "hcpmsServer": "hcpms-s0004418509trial.hanatrial.ondemand.com",
+    "hybridRevision": "1",
+    "platform": {
+      "ios": {
+        "selected": false,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "all",
+          "EnableViewportScale": false,
+          "UrlScheme": ""
+        }
+      },
+      "android": {
+        "selected": true,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": "VERBOSE",
+          "LoadUrlTimeout": "80000",
+          "UrlScheme": ""
+        }
+      },
+      "windows": {
+        "selected": false,
+        "preferences": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": ""
+        },
+        "preferencesWin10": {
+          "Fullscreen": false,
+          "Orientation": "default",
+          "ShowTitle": false,
+          "LogLevel": ""
+        }
+      }
+    },
+    "plugins": {
+      "cordova": {
+        "device": {
+          "selected": false,
+          "registry": "cordova-plugin-device",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "network": {
+          "selected": false,
+          "registry": "cordova-plugin-network-information",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "battery": {
+          "selected": false,
+          "registry": "cordova-plugin-battery-status",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "accelerometer": {
+          "selected": false,
+          "registry": "cordova-plugin-device-motion",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "comprass": {
+          "selected": false,
+          "registry": "cordova-plugin-device-orientation",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "geolocation": {
+          "selected": false,
+          "registry": "cordova-plugin-geolocation",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "camera": {
+          "selected": true,
+          "registry": "cordova-plugin-camera",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "capture": {
+          "selected": false,
+          "registry": "cordova-plugin-media-capture",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "media": {
+          "selected": false,
+          "registry": "cordova-plugin-media",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "file": {
+          "selected": true,
+          "registry": "cordova-plugin-file",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "transfer": {
+          "selected": false,
+          "registry": "cordova-plugin-file-transfer",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "dialogs": {
+          "selected": false,
+          "registry": "cordova-plugin-dialogs",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "vibration": {
+          "selected": false,
+          "registry": "cordova-plugin-vibration",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "contacts": {
+          "selected": false,
+          "registry": "cordova-plugin-contacts",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "globalization": {
+          "selected": false,
+          "registry": "cordova-plugin-globalization",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "splashscreen": {
+          "selected": false,
+          "registry": "cordova-plugin-splashscreen",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "inappbrowser": {
+          "selected": false,
+          "registry": "cordova-plugin-inappbrowser",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "console": {
+          "selected": true,
+          "registry": "cordova-plugin-console",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "statusbar": {
+          "selected": false,
+          "registry": "cordova-plugin-statusbar",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "compass": {
+          "selected": false,
+          "registry": "cordova-plugin-device-orientation",
+          "localBuild": true
+        }
+      },
+      "kapsel": {
+        "logon": {
+          "selected": true,
+          "registry": "kapsel-plugin-logon",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "appupdate": {
+          "selected": false,
+          "registry": "kapsel-plugin-appupdate",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "logger": {
+          "selected": false,
+          "registry": "kapsel-plugin-logger",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "settings": {
+          "selected": false,
+          "registry": "kapsel-plugin-settings",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "push": {
+          "selected": false,
+          "registry": "kapsel-plugin-push",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "encryptedstorage": {
+          "selected": false,
+          "registry": "kapsel-plugin-encryptedstorage",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "authproxy": {
+          "selected": false,
+          "registry": "kapsel-plugin-authproxy",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "barcode": {
+          "selected": false,
+          "registry": "kapsel-plugin-barcodescanner",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "odata": {
+          "selected": false,
+          "registry": "kapsel-plugin-odata",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "e2etrace": {
+          "selected": false,
+          "registry": "kapsel-plugin-e2etrace",
+          "localBuild": true,
+          "fioriClient": false
+        },
+        "calendar": {
+          "selected": false,
+          "registry": "nl.x-services.plugins.calendar",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "voicerecord": {
+          "selected": false,
+          "registry": "kapsel-plugin-voicerecording",
+          "localBuild": true,
+          "fioriClient": true
+        },
+        "inappmsg": {
+          "selected": false,
+          "registry": "kapsel-plugin-inappmsg",
+          "localBuild": false,
+          "fioriClient": false
+        },
+        "apppreferences": {
+          "selected": false,
+          "registry": "kapsel-plugin-apppreferences",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "attachmentviewer": {
+          "selected": false,
+          "registry": "kapsel-plugin-attachmentviewer",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "cachemanager": {
+          "selected": false,
+          "registry": "kapsel-plugin-cachemanager",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "printer": {
+          "selected": false,
+          "registry": "kapsel-plugin-print",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "onlineapps": {
+          "selected": false,
+          "registry": "kapsel-plugin-online",
+          "localBuild": false,
+          "fioriClient": true
+        },
+        "toolbar": {
+          "selected": false,
+          "registry": "kapsel-plugin-toolbar",
+          "localBuild": false,
+          "fioriClient": true
+        }
+      },
+      "custom": {}
+    },
+    "mime": {
+      "path": "",
+      "root": ""
+    }
+  }
+}
