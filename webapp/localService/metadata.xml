@@ -1,0 +1,55 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZTEST_FLIGHT_TRACKING_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName" m:FC_KeepInContent="false"
+					sap:label="User Name" sap:creatable="false" sap:filterable="false"/><Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false"
+					sap:label="Time Stamp" sap:creatable="false" sap:filterable="false"/><Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Title"
+					sap:filterable="false"/><Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/><Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification" sap:filterable="false"/><Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection" sap:filterable="false"/><Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/><Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/><Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/></EntityType>
+			<EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/><Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/><Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Notif. Text"/><Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false"
+					sap:label="Time Stamp"/><Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/><Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/><Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Flight" sap:content-version="1">
+				<Key><PropertyRef Name="Airline"/><PropertyRef Name="FlightNumber"/></Key><Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Flight Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CountryFrom" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Country" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CityFrom" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Depart.city" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AirportFrom" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Dep. airport" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CountryTo" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Country" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="CityTo" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Arrival city" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AirpTo" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Dest. airport" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="DepartureTime" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Departure" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ArrivalTime" Type="Edm.Time" Nullable="false" Precision="0" sap:label="Arrival Time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="FlightDetails" Relationship="ZTEST_FLIGHT_TRACKING_SRV.FlightFlightDetails"
+					FromRole="FromRole_FlightFlightDetails" ToRole="ToRole_FlightFlightDetails"/></EntityType>
+			<EntityType Name="FlightDetail" sap:content-version="1">
+				<Key><PropertyRef Name="Airline"/><PropertyRef Name="FlightNumber"/><PropertyRef Name="FlightDate"/></Key><Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="FlightNumber" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Flight Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FlightDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unit="Currency" sap:label="Airfare"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Airline Currency" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="PlaneType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Plane Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="SeatsMaxEcon" Type="Edm.Int32" Nullable="false" sap:label="Max. capacity econ." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SeatsOccEcon" Type="Edm.Int32" Nullable="false" sap:label="Occupied econ." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SeatsMaxBus" Type="Edm.Int32" Nullable="false" sap:label="Max. capacity bus." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SeatsOccBus" Type="Edm.Int32" Nullable="false" sap:label="Occupied bus." sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SeatsMax1st" Type="Edm.Int32" Nullable="false" sap:label="Max. capacity 1st" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SeatsOcc1st" Type="Edm.Int32" Nullable="false" sap:label="Occupied 1st" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="FlightFlightDetails" sap:content-version="1"><End Type="ZTEST_FLIGHT_TRACKING_SRV.Flight" Multiplicity="1" Role="FromRole_FlightFlightDetails"/><End Type="ZTEST_FLIGHT_TRACKING_SRV.FlightDetail" Multiplicity="*" Role="ToRole_FlightFlightDetails"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_FlightFlightDetails"><PropertyRef Name="Airline"/><PropertyRef Name="FlightNumber"/></Principal>
+					<Dependent Role="ToRole_FlightFlightDetails"><PropertyRef Name="Airline"/><PropertyRef Name="FlightNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZTEST_FLIGHT_TRACKING_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="SubscriptionCollection" EntityType="ZTEST_FLIGHT_TRACKING_SRV.Subscription" sap:content-version="1"/><EntitySet Name="NotificationCollection" EntityType="ZTEST_FLIGHT_TRACKING_SRV.Notification" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="Flights" EntityType="ZTEST_FLIGHT_TRACKING_SRV.Flight" sap:searchable="true" sap:requires-filter="true"
+				sap:content-version="1"/><EntitySet Name="FlightDetails" EntityType="ZTEST_FLIGHT_TRACKING_SRV.FlightDetail" sap:searchable="true" sap:requires-filter="true"
+				sap:content-version="1"/>
+				<AssociationSet Name="FlightFlightDetailsSet" Association="ZTEST_FLIGHT_TRACKING_SRV.FlightFlightDetails" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="Flights" Role="FromRole_FlightFlightDetails"/><End EntitySet="FlightDetails" Role="ToRole_FlightFlightDetails"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZTEST_FLIGHT_TRACKING_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZTEST_FLIGHT_TRACKING_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
