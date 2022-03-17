@@ -1,0 +1,55 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nw.epm.refapps.ext.po.apv.view.S2_PurchaseOrders">
+	<Page title="{viewProperties>/pageTitle}" showNavButton="true" navButtonPress="onNavButtonPress">
+		<headerContent>
+			<Button icon="{viewProperties>/multiselectIcon}" press="onMultiSelectPressed" />
+		</headerContent>
+
+		<subHeader>
+			<Toolbar>
+				<!--Search field which triggers a (filtered) backend search.
+				On desktop this control also provides an option to refresh the list. 
+				On non desktop devices the pull to refresh control (see below) is used for that -->
+				<SearchField id="searchField" showRefreshButton="{device>/isDesktop}" search="onSearch" width="100%" />
+			</Toolbar>
+		</subHeader>
+
+		<content>
+			<!-- On non desktop devices the user triggers the list refresh by pulling down the list (pull to refresh) -->
+			<PullToRefresh visible="{device>/isNoDesktop}" refresh="onPullToRefresh" />
+
+			<!--List of purchase orders that need to be approved. The list entries contain the information supplier name, total value, requester, change date and number of items-->
+			<!-- Note that the select defined for the list items ensures, that all attributes that are required on S3 view are loaded already here -->
+			<List
+				id="list" mode="{viewProperties>/listMode}" selectionChange="onItemSelect" modeAnimationOn="false" includeItemInSelection="true"
+				updateFinished="onUpdateFinished" updateStarted="onUpdateStarted" noDataText="{i18n>ymsg.noDataTextMaster}" swipe="onSwipe"
+				items="{path: '/PurchaseOrders',
+						sorter: {path: 'ChangedAt', descending: true},
+						parameters: {select: 'POId,OrderedByName,SupplierName,GrossAmount,CurrencyCode,ChangedAt,DeliveryDateEarliest,LaterDelivDateExist,DeliveryAddress,ItemCount'}}" >
+				<ObjectListItem
+					title="{SupplierName}" type="{device>/listItemType}" press="onItemSelect"
+					number="{path: 'GrossAmount', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.amountWithOutCurrency'}" numberUnit="{CurrencyCode}"
+					intro="{path:'OrderedByName', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.orderedBy'}" >
+					<secondStatus>
+						<ObjectStatus text="{path: 'ChangedAt', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.daysAgo'}" />
+					</secondStatus>
+					<attributes>
+						<ObjectAttribute />
+						<ObjectAttribute text="{path: 'ItemCount', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.items'}" />
+					</attributes>
+				</ObjectListItem>
+				<swipeContent>
+					<Button text="{i18n>xbut.approve}" type="Accept" press="onSwipeApprove" />
+				</swipeContent>
+			</List>
+		</content>
+
+		<!--Footer bar shows "Process" button on the phone which allows to navigate to the summary view -->
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button visible="{viewProperties>/processButtonVisible}" enabled="{viewProperties>/processButtonEnabled}" type="Emphasized" text="{i18n>xbut.process}" press="onProcessPressed"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

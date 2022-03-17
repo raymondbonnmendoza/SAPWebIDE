@@ -1,0 +1,16 @@
+{
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/EPM_REF_APPS_PO_APV_SRV/",
+    "loadCustomRequests": true,
+    "loadJSONFiles": true,
+    "metadataFilePath": "model/metadata.xml",
+    "mockRequestsFilePath": ""
+  },
+  "generation": [
+    {
+      "templateId": "fiorireferenceapps.approvePurchaseOrder",
+      "templateVersion": "1.0.1",
+      "dateTimeStamp": "Tue, 28 Apr 2015 06:18:22 GMT"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+/*Padding set to Important, otherwise it will be overwritten by css provided by the control*/
+.nwEpmRefappsExtPoApvControlLayout {
+	padding: 1rem 1rem 0 1rem!important;
+}
+
+.sap-phone .nwEpmRefappsExtPoApvControlLayout {
+	padding: 1rem 0 0 0 !important; 
+}
+
+/*Padding set to Important, otherwise it will be overwritten by css provided by the control*/
+.nwEpmRefappsExtPoApvTextLayout {
+	padding: 1rem 1rem 0 1rem !important;
+	width: 100%;
+}
+
+/*Padding set to Important, otherwise it will be overwritten by css provided by the control*/
+.nwEpmRefappsExtPoApvTextAreaLayout {
+	padding: 1rem 1rem 1rem 1rem !important;
+}
+
+.sap-phone .nwEpmRefappsExtPoApvApprovalDialogLayout {
+	width: 100%;
+}
+
+.nwEpmRefappsExtPoApvTextcontainer{
+  position: absolute;
+  left: 34%;
+  right: 25%;
+  top: 38%;
+  margin:auto;
+  overflow:visible;
+}
+
+.sap-phone .nwEpmRefappsExtPoApvTextcontainer{
+  left: 18%;
+  right: 18%;
+}
+
+.nwEpmRefappsExtPoApvTextcontainer > .sapMFlexItem{
+  display:block;
+  width:auto;
+  margin:auto;
+}
+
+.nwEpmRefappsExtPoApvTextclass{
+  text-align:center!important;
+  font-size:1.5rem;
+  color: @sapUiLightText;
+}

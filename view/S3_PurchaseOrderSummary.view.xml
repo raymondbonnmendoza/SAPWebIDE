@@ -1,0 +1,52 @@
+<mvc:View controllerName="nw.epm.refapps.ext.po.apv.view.S3_PurchaseOrderSummary" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
+	<Page id="summaryPage" title="{viewProperties>/pageTitle}" class="sapUiFioriObjectPage" showNavButton="{device>/isPhone}" navButtonPress="onNavButtonPress">
+		<ObjectHeader id="header"
+			title="{i18n>xtit.summaryHeaderTitle}"
+			number="{path: 'viewProperties>/totalSum', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.amountWithOutCurrency'}" numberUnit="{viewProperties>/totalCurrencyCode}" />
+
+		<core:ExtensionPoint name="extDetail"/>
+
+		<Table id ="PurchaseOrders" items="{viewProperties>/selectedPurchaseOrders}" class="nwEpmRefappsExtPoApvControlLayout" noDataText="{i18n>ymsg.noDataTextSummary}">
+			<columns>
+				<!-- Supplier -->
+				<Column>
+					<header>
+						<Label text="{/#PurchaseOrder/SupplierName/@sap:label}"/>
+					</header>
+				</Column>
+				<!-- Purchase Order ID -->
+				<!-- Setting minScreenWidth to Small let's the column go to pop-in for portrait but not for landscape mode.-->
+				<Column demandPopin="true" minScreenWidth="Small">
+					<header>
+						<Label text="{/#PurchaseOrder/POId/@sap:label}"/>
+					</header>
+				</Column>
+				<!-- Sum -->
+				<Column hAlign="Right">
+					<header>
+						<Label text="{/#PurchaseOrder/GrossAmount/@sap:label}"/>
+					</header>
+				</Column>
+			</columns>
+			<ColumnListItem>
+				<cells>
+					<!-- Supplier -->
+					<ObjectIdentifier title="{viewProperties>SupplierName}" text="{path: 'viewProperties>ItemCount', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.items'}" class="sapMTableContentMargin"/>
+					<!-- Purchase Order ID -->
+					<Text text="{viewProperties>POId}" class="sapMTableContentMargin"/>
+					<!-- Sum -->
+					<ObjectNumber number="{path:'viewProperties>GrossAmount', formatter: 'nw.epm.refapps.ext.po.apv.util.formatter.amountWithOutCurrency'}" unit="{viewProperties>CurrencyCode}" class="sapMTableContentMargin"/>
+				</cells>
+			</ColumnListItem>
+		</Table>
+
+		<footer id="detailsFooter">
+			<Bar id="bar">
+				<contentRight id="detailsContentRight">
+					<Button id="approveButton" enabled="{viewProperties>/approvalButtonsEnabled}" type="Accept" text="{i18n>xbut.approveAll}" press="onOpenApprovalDialog"></Button>
+					<Button id="rejectButton" enabled="{viewProperties>/approvalButtonsEnabled}" type="Reject" text="{i18n>xbut.rejectAll}" press="onOpenApprovalDialog"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

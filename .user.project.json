@@ -1,0 +1,16 @@
+{
+  "run": [
+    {
+      "filePath": "/nw.epm.refapps.ext.po.apv/localIndex.html",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "urlParameters": [],
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 3438961,
+        "displayName": "New Web Application 3"
+      }
+    }
+  ]
+}
