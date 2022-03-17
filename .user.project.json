@@ -1,0 +1,27 @@
+{
+  "run": [
+    {
+      "filePath": "/OfflineOpenSAPApp/index.html",
+      "previewMode": 1,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "backendSystem": [
+        {
+          "source": "Northwind",
+          "destinations": "Northwind"
+        }
+      ],
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 4685230,
+        "displayName": "New Web Application 9",
+        "lastRunTimeStamp": 1469080534103
+      }
+    }
+  ]
+}

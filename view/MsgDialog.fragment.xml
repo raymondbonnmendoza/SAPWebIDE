@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Dialog id="dialogBox" title="Results" type="Message">
+		<Text id="dialogText" text=""/>
+		<beginButton>
+			<Button press="closeDialog" text="Close"/>
+		</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

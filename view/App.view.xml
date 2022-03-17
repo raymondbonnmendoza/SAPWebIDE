@@ -1,0 +1,3 @@
+<mvc:View controllerName="com.sap.open.offline.view.App" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<SplitApp id="idAppControl"/>
+</mvc:View>
