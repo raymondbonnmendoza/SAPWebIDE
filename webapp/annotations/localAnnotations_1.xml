@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?> <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/UI.xml">
+        <edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata">
+        <edmx:Include Alias="GWSAMPLE_BASIC" Namespace="GWSAMPLE_BASIC"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Communication.xml">
+        <edmx:Include Alias="vCard" Namespace="com.sap.vocabularies.Communication.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/bc/ui5_ui5/ui2/ushell/resources/sap/ushell/components/factsheet/vocabularies/Common.xml">
+        <edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata02/os/complete/vocabularies/Org.OData.Core.V1.xml">
+        <edmx:Include Alias="Core" Namespace="Org.OData.Core.V1"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+        <edmx:Include Alias="CQP" Namespace="Org.OData.Measures.V1"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="/IWBEP/GWSAMPLE_BASIC.Product"> <Annotation Term="UI.LineItem"> <Collection> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="ProductID"/> </Record> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="Name"/> </Record> </Collection> </Annotation> <Annotation Term="UI.Identification"> <Collection> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="Description"/> </Record> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="SupplierName"/> </Record> <Record Type="UI.DataField"> <PropertyValue Property="Value"> <Apply Function="odata.concat"> <Path>Price</Path> <String>{@i18n&gt;@_}</String> <Path>CurrencyCode</Path> </Apply> </PropertyValue> </Record> </Collection> </Annotation> <Annotation Term="UI.HeaderInfo"> <Record> <PropertyValue Property="Title"> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="Name"/> </Record> </PropertyValue> <PropertyValue Property="TypeName" String="{@i18n&gt;@PRODUCT}"/> <PropertyValue Property="TypeNamePlural" String="{@i18n&gt;@PRODUCTS}"/> <PropertyValue Property="TypeImageUrl" String=""/> <PropertyValue Property="ImageUrl" String=""/> </Record> </Annotation> </Annotations>
+        <Annotations Target="/IWBEP/GWSAMPLE_BASIC.SalesOrderLineItem"> <Annotation Term="UI.LineItem"> <Collection> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="SalesOrderID"/> </Record> </Collection> </Annotation> <Annotation Term="UI.Identification"> <Collection> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="Note"/> </Record> </Collection> </Annotation> <Annotation Term="UI.HeaderInfo"> <Record> <PropertyValue Property="Title"> <Record Type="UI.DataField"> <PropertyValue Property="Value" Path="SalesOrderID"/> </Record> </PropertyValue> <PropertyValue Property="TypeName" String="{@i18n&gt;@SALES_ORDER_ITEM}"/> <PropertyValue Property="TypeNamePlural" String="{@i18n&gt;@SALES_ORDER_ITEMS}"/> <PropertyValue Property="TypeImageUrl" String=""/> <PropertyValue Property="ImageUrl" String=""/> </Record> </Annotation> </Annotations> </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
