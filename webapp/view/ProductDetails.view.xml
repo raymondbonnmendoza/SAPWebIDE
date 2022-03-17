@@ -1,0 +1,19 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.so.controller.ProductDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Product Details" showNavButton="true" navButtonPress="onNavBack">
+				<content>
+					<ObjectHeader title="{Name}" number="{Price}" numberUnit="{CurrencyCode}">
+						<attributes>
+							<ObjectAttribute text="ProductID: {ProductID}" />
+							<ObjectAttribute text="Description: {Description}" />
+							<ObjectAttribute text="Weight Measure: {WeightMeasure} {WeightUnit}" />
+							<ObjectAttribute text="Dimension: {Width} x {Depth} x {Height} {DimUnit}" />
+						</attributes>
+					</ObjectHeader>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

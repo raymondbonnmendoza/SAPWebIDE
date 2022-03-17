@@ -1,0 +1,88 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="com.so.controller.Detail">
+
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{CustomerName}" number="{         path: 'GrossAmount',         formatter: '.formatter.currencyValue'      }" numberUnit="{CurrencyCode}">
+			</ObjectHeader>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}">
+					<content>
+					    <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="false" layout="ResponsiveGridLayout" id="__form0">
+					        <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
+					            <sap.ui.core:Title xmlns:sap.ui.core="sap.ui.core" text="Sales Order Details" id="__title0"/>
+					            <Label text="Sales Order ID" id="__label0"/>
+					            <Input width="100%" id="__input0" value="{SalesOrderID}"/>
+					            <Label text="Note" id="__label1"/>
+					            <Input width="100%" id="__input2" value="{Note}"/></sap.ui.layout.form:content>
+					    </sap.ui.layout.form:SimpleForm>
+					</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://simple-payment" iconColor="Positive" id="__filter0">
+					    <content>
+					        <sap.ui.layout.form:SimpleForm editable="false" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="__form1">
+					            <sap.ui.layout.form:content xmlns:sap.ui.layout.form="sap.ui.layout.form">
+					                <Label text="Gross Amount" id="__label2"/>
+					                <Input width="100%" id="__input1" value="{GrossAmount} {CurrencyCode}"/>
+					                <Label text=" Net Amount" id="__label3"/>
+					                <Input width="100%" id="__input4" value="{NetAmount} {CurrencyCode}"/>
+					                <Label text="Tax Amount" width="100%" id="__label4"/>
+					                <Input width="100%" id="__input5" value="{TaxAmount} {CurrencyCode}"/></sap.ui.layout.form:content>
+					        </sap.ui.layout.form:SimpleForm>
+					    </content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<Table id="lineItemsList" width="auto" items="{ToLineItems}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}" class="sapUiResponsiveMargin">
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar">
+						<Title id="lineItemsHeader" text="{detailView>/lineItemListTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="{i18n>detailLineItemTableIDColumn}"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+						<Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onPress" type="Navigation">
+						<cells>
+							<ObjectIdentifier title="{ProductID}" text="{ItemPosition}"/>
+							<ObjectNumber number="{          path: 'GrossAmount',          formatter: '.formatter.currencyValue'         }" unit="{CurrencyCode}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id="shareTile" title="{detailView>/saveAsTileTitle}"/>
+		</semantic:saveAsTileAction>
+
+	<semantic:positiveAction>
+
+	    <semantic:PositiveAction text="Approve" id="__action0" press="onApprove"/>
+
+	</semantic:positiveAction>
+
+	<semantic:negativeAction>
+
+	    <semantic:NegativeAction text="Reject" id="__action1" press="onReject"/>
+
+	</semantic:negativeAction>
+
+	</semantic:DetailPage>
+
+</mvc:View>
