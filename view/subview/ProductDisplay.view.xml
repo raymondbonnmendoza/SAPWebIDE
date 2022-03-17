@@ -1,0 +1,79 @@
+<core:View
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form"
+	xmlns:prod="nw.epm.refapps.ext.prod.manage.control"
+	controllerName="nw.epm.refapps.ext.prod.manage.view.subview.ProductDisplay">
+	<Page title="{i18n>xtit.product}" showNavButton="{device>/isPhone}" class="sapUiFioriObjectPage" navButtonPress="onNavButtonPress">
+		<content>
+			<!-- Object Header -->
+			<ObjectHeader
+				id="ProductHeader" title="{Name}" icon="{ImageUrl}" iconDensityAware="false" numberUnit="{CurrencyCode}"
+				number="{parts:[{path:'Price'},{path:'CurrencyCode'}], formatter:'sap.ca.ui.model.format.AmountFormat.FormatAmountStandard'}" >
+				<statuses>
+					<ObjectStatus
+						text="{path: 'StockQuantity', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatAvailabilityText'}"
+						state="{path: 'StockQuantity', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatAvailabilityStatus'}"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute
+						title="{/#Product/MainCategoryName/@sap:label}"
+						text="{MainCategoryName}" />
+					<ObjectAttribute
+						title="{/#Product/SubCategoryName/@sap:label}"
+						text="{SubCategoryName}"/>
+				</attributes>
+			</ObjectHeader>
+			
+			<!--Extension Point-->
+			<core:ExtensionPoint name="extensionAfterObjectHeader" />
+			
+			<!-- General Information -->
+			<f:SimpleForm class="nwEpmRefappsExtProdManageControlLayout"
+				minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7" title="{i18n>xtit.generalInfo}">
+				<f:content>
+					<Label text="{/#Product/Id/@sap:label}" />
+					<Text text="{Id}" />
+					<Label text="{/#Product/Description/@sap:label}" />
+					<Text text="{Description}" />
+					<Label text="{/#Product/SupplierName/@sap:label}" />
+					<Link text="{SupplierName}" press="onSupplierPressed" />
+					<Label text="{i18n>xfld.reviews}" />
+					<!-- Call Custom Control for Rating Count -->
+					<prod:RatingAndCount maxRatingValue="5"
+					value="{AverageRating}" enabled="false"
+					iconSize="0.8rem" ratingCount="{RatingCount}" verticalAdjustment="-15" verticalAlignContent="true" />
+				</f:content>
+			</f:SimpleForm>
+			<!-- Technical Information -->
+			<f:SimpleForm class="nwEpmRefappsExtProdManageControlLayout"
+				minWidth="1024" maxContainerCols="2" editable="false" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4"
+				emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7" title="{i18n>xtit.techData}">
+				<f:content>
+					<Label text="{/#Product/QuantityUnit/@sap:label}" />
+					<Text text="{MeasureUnit}"></Text>
+					<Label text="{/#Product/DimensionDepth/@sap:label}" />
+					<Text text="{parts:[{path: 'DimensionDepth'}, {path: 'DimensionUnit'}], formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatMeasure' }" />
+					<Label text="{/#Product/DimensionWidth/@sap:label}" />
+					<Text text="{parts:[{path: 'DimensionWidth'}, {path: 'DimensionUnit'}], formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatMeasure' }" />
+					<Label text="{/#Product/DimensionHeight/@sap:label}" />
+					<Text text="{parts:[{path: 'DimensionHeight'}, {path: 'DimensionUnit'}], formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatMeasure' }" />
+					<Label text="{/#Product/WeightMeasure/@sap:label}" />
+					<Text text="{parts:[{path: 'WeightMeasure'}, {path: 'WeightUnit'}], formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatMeasure' }" />
+				</f:content>
+			</f:SimpleForm>
+					
+			<!-- Extension Point for customer field extension -->
+			<core:ExtensionPoint name="extensionBottomOfScreen"/>
+		</content>
+		<footer>
+	    	<Bar>
+		    	<contentRight>
+					<Button  text="{i18n>xbut.edit}" enabled ="{appProperties>/isEditAllowed}" press="onEditPressed" type="Emphasized" id="editButton" />
+					<Button  text="{i18n>xbut.delete}" enabled ="{appProperties>/isSingleSelect}" press="onDeletePressed" id="deleteButton" />
+				    <Button  text="{i18n>xbut.copy}" enabled ="{appProperties>/isEditAllowed}" press="onCopyPressed" id="copyButton" />
+				    <Button icon="sap-icon://action"  press="onSharePressed" enabled ="{appProperties>/metadataLoaded}" id="shareButton" />
+				</contentRight>			
+			</Bar>
+		</footer>
+	</Page>
+</core:View>

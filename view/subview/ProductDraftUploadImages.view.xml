@@ -1,0 +1,20 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m"
+		controllerName="nw.epm.refapps.ext.prod.manage.view.subview.ProductDraftUploadImages">
+
+<!-- The list of file types is not complete and needs to be adjusted according to the specific requirements -->
+	<UploadCollection id="Upload_Images" items="{Images}" multiple="false" class="nwEpmRefappsExtProdManageControlLayout"
+		uploadUrl="{path:'Id', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.getImageUploadURL'}" sameFilenameAllowed="true"
+		uploadComplete="onUploadCompleted" fileDeleted="onImageDelete" change="onChange" typeMissmatch="onFileTypeMismatch"
+		fileType="{[ 'jpg', 'jpeg', 'Png', 'bmp', 'PNG', 'JPEG' ]}">
+		<items>
+			<UploadCollectionItem contributor="{CreatedBy}" 
+				uploadedDate="{path:'CreatedAt', type:'sap.ui.model.type.DateTime'}"
+				fileName="" enableEdit="false" enableDelete="{IsDeletable}"
+				thumbnailUrl = "{path: 'Id', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatImageURL'}" 
+				url="{path: 'Id', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatImageURL'}"
+				documentId = "{Id}">
+			</UploadCollectionItem>
+		</items>
+	</UploadCollection>
+
+</core:View>

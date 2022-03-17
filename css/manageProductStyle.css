@@ -1,0 +1,40 @@
+.nwEpmRefappsExtProdManageControlLayout {
+	padding: 1rem 1rem 0 1rem;
+}
+.sap-phone .nwEpmRefappsExtProdManageControlLayout {
+	padding: 1rem 0 0 0; 
+}
+
+.nwEpmRefappsExtProdManageTextcontainer{
+  position: absolute;
+  left: 34%;
+  right: 25%;
+  top: 38%;
+  margin:auto;
+  overflow:visible;
+}
+
+.sap-phone .nwEpmRefappsExtProdManageTextcontainer{
+  left: 18%;
+  right: 18%;
+}
+
+.nwEpmRefappsExtProdManageTextcontainer > .sapMFlexItem{
+  display:block;
+  width:auto;
+  margin:auto;
+}
+
+.nwEpmRefappsExtProdManageTextclass{
+  text-align:center!important;
+  font-size:1.5rem;
+  color: @sapUiLightText;
+}
+
+.nwEpmRefappsExtProdManageRatingAndCountVAlign{
+	vertical-align: middle;
+}
+
+.noColonLabelInForm:after {
+content: "" !important;
+}

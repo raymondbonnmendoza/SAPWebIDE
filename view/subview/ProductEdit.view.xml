@@ -1,0 +1,134 @@
+<core:View
+	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc"
+	controllerName="nw.epm.refapps.ext.prod.manage.view.subview.ProductEdit">
+	<Page id="page" showNavButton="{device>/isPhone}" title="{path: 'IsNewProduct', formatter: 'nw.epm.refapps.ext.prod.manage.util.formatter.formatEditTitle'}" navButtonPress="onNavButtonPress">
+		<content>
+			<!-- Form for Product Information -->
+			<f:SimpleForm class="nwEpmRefappsExtProdManageControlLayout"
+				minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7"
+				id="simp1" title="{i18n>xtit.generalInfo}">
+				<f:content>
+					<Label text="{/#Product/Name/@sap:label}" required="true"/>
+					<Input
+						id="productNameInput" type="Text" valueStateText="{i18n>ymsg.errorName}"
+						maxLength="{path: '/#Product/Name/@maxLength', formatter: 'Number'}"
+						change="onInputChange"
+						value="{path: 'Name'}"/>
+					<Label text="{/#Product/Price/@sap:label}" required="true"/>
+					<Input id="price" valueStateText="{i18n>ymsg.errorDescription}"
+						change="onNumberChange"
+						value="{Price}" type="Text"
+						textAlign="Right" />
+					<ComboBox id="currency" valueStateText="{i18n>ymsg.errorCurrency}" selectedKey="{CurrencyCode}"
+						items="{path: '/Currencies', length: '300'}"  selectionChange="onInputChange">
+						<core:Item key="{Code}" text="{Code}" />
+					</ComboBox>
+					<Label text="{/#Product/MainCategoryName/@sap:label}" required="true"></Label>
+					<ComboBox
+						id="category" valueStateText="{i18n>ymsg.errorMainCategory}"
+						selectionChange="onCategoryChange"
+						selectedKey="{MainCategoryId}"
+						items="{path: '/MainCategories'}">
+						<core:Item key="{Id}" text="{Name}" />
+					</ComboBox>
+					<Label/>
+					<Label text="{/#Product/SubCategoryName/@sap:label}" required="true"/>
+					<ComboBox
+						id="subcategory" valueStateText="{i18n>ymsg.errorSubCategory}"
+						selectionChange="onInputChange"
+						selectedKey="{SubCategoryId}"
+						items="{path: '/SubCategories'}">
+						<core:Item key="{Id}" text="{Name}" />
+					</ComboBox>
+					<Label/>
+					<Label text="{/#Product/Id/@sap:label}"/>
+					<Input id="productId" editable="false" value="{Id}"/>
+					<Label text="{/#Product/Description/@sap:label}" required="true"/>
+					<TextArea
+						id="description" valueStateText="{i18n>ymsg.errorDescription}"
+						maxLength="{path: '/#Product/Description/@maxLength', formatter: 'Number'}"
+						change="onInputChange"
+						value="{path: 'Description'}"/>
+					<Label text="{/#Product/SupplierName/@sap:label}" required="true"/>
+					<Input
+						id="supplier" type="Text" valueStateText="{i18n>ymsg.errorSupplier}"
+						maxLength="{path: '/#Product/SupplierName/@maxLength', formatter: 'Number'}"
+						change="onInputChange"
+						showSuggestion="true" suggest="suggestMethod" maxSuggestionWidth="600px" filterSuggests="false"
+						value="{path: 'SupplierName'}"/>
+					<Label/>
+				</f:content>
+			</f:SimpleForm>
+
+			<!-- Form for Physical Properties -->
+			<f:SimpleForm class="nwEpmRefappsExtProdManageControlLayout"
+				minWidth="1024" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="7" columnsM="7" title="{i18n>xtit.techData}">
+				<f:content>
+					<Label text="{/#Product/QuantityUnit/@sap:label}" required="true"/>
+					<ComboBox
+						id="unitOfMeasure" valueStateText="{i18n>ymsg.errorQuantityUnit}" selectedKey="{QuantityUnit}"
+						change="onInputChange"
+						items="{path: '/QuantityUnits'}">
+						<core:Item key="{Unit}" text="{Shorttext}" />
+					</ComboBox>
+					<Label text="{/#Product/DimensionDepth/@sap:label}"/>
+					<Input id="length" type="Text"
+						change="onNumberChange"
+						value="{DimensionDepth}" 
+						textAlign="Right"/>
+					<Select
+						id="length_uom" selectedKey="{DimensionUnit}"
+						change="onSelectChange"
+						items="{path: '/DimensionUnits'}">
+						<core:Item key="{Unit}" text="{Text}" />
+					</Select>
+					<Label text="{/#Product/DimensionWidth/@sap:label}"/>
+					<Input id="width" type="Text"
+						change="onNumberChange"
+						value="{DimensionWidth}"
+						textAlign="Right"/>
+					<Select id="width_uom" selectedKey="{DimensionUnit}" items="{path: '/DimensionUnits'}"
+						change="onSelectChange">
+						<core:Item key="{Unit}" text="{Text}" />
+					</Select>
+					<Label text="{/#Product/DimensionHeight/@sap:label}"/>
+					<Input id="height" type="Text"
+						change="onNumberChange"
+						value="{DimensionHeight}"
+						textAlign="Right"/>
+					<Select id="height_uom" selectedKey="{DimensionUnit}" items="{path: '/DimensionUnits'}"
+					    change="onSelectChange">
+						<core:Item key="{Unit}" text="{Text}" />
+					</Select>
+					<Label text="{/#Product/WeightMeasure/@sap:label}" />
+					<Input id="weight" type="Text"
+				    	change="onNumberChange" value="{WeightMeasure}"
+					    textAlign="Right"/>
+					<Select
+						id="weight_uom" selectedKey="{WeightUnit}"
+						change="onSelectChange"
+						items="{path: '/WeightUnits'}">
+						<core:Item key="{Unit}" text="{Text}" />
+					</Select>
+				</f:content>
+			</f:SimpleForm>
+
+			<!-- Sub-View for Uploading/Removing Images -->
+			<mvc:XMLView viewName="nw.epm.refapps.ext.prod.manage.view.subview.ProductDraftUploadImages" id="View_ImageUpload" />
+			
+			<!-- Extension Point for customer field extension -->
+			<core:ExtensionPoint name="extensionBottomOfEditScreen"/>
+		</content>
+		<footer>
+	    	<Bar>
+		    	<contentRight>
+					<Button text="{i18n>xbut.save}" press="onSavePressed" id="saveButton" />
+					<Button text="{i18n>xbut.cancel}" press="onCancelPressed" id="cancelButton" />
+				    <Button icon="sap-icon://action"  press="onSharePressed" id="shareButton" />
+				</contentRight>			
+			</Bar>
+		</footer>		
+	</Page>
+</core:View>

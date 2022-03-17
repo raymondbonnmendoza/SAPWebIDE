@@ -1,0 +1,11 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nw.epm.refapps.ext.prod.manage.view.EmptyPage">
+	<Page enableScrolling="false" class="sapUiFioriObjectPage" showNavButton="{device>/isPhone}" navButtonPress="onNavButtonPress">
+		<content>
+			<VBox class="nwEpmRefappsExtProdManageTextcontainer">
+				<items>
+					<Text text="{appProperties>/emptyText}" class="nwEpmRefappsExtProdManageTextclass" />
+				</items>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

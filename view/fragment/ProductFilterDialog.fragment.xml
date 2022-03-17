@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm="onFilterDialogConfirm">
+		<filterItems>
+			<ViewSettingsFilterItem text="{i18n>xfld.availability}" key="Availibility" >
+				<items>
+					<ViewSettingsItem text="{i18n>xfld.outstock}" key="outofstock" />
+					<ViewSettingsItem text="{i18n>xfld.restricted10}" key="restrictedstock" />
+					<ViewSettingsItem text="{i18n>xfld.instock}" key="instock" />
+				</items>
+			</ViewSettingsFilterItem>
+			<ViewSettingsFilterItem text="{/#Product/Price/@sap:label}" key="Price" >
+				<items>
+					<ViewSettingsItem text="{viewProperties>/LE100}" key="LE100" />
+					<ViewSettingsItem text="{viewProperties>/BT100-500}" key="BT100-500" />
+					<ViewSettingsItem text="{viewProperties>/BT500-1000}" key="BT500-1000" />
+					<ViewSettingsItem text="{viewProperties>/GT1000}" key="GT1000" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,21 @@
+{
+  "run": [
+    {
+      "filePath": "/nw.epm.refapps.ext.prod.manage/localIndex.html",
+      "previewMode": 0,
+      "dataMode": 1,
+      "workspace": "withoutWorkspace",
+      "ui5ActiveVersion": null,
+      "ui5VerSource": null,
+      "isDefaultVersion": 0,
+      "urlParameters": [],
+      "hashParameter": "",
+      "_metadata": {
+        "runnerId": "webapprunner",
+        "id": 8691700,
+        "displayName": "New Web Application 5",
+        "lastRunTimeStamp": 1476265561740
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nw.epm.refapps.ext.prod.manage.view.S2_ProductMaster">
+	
+	<Page id="masterPage" title="{viewProperties>/title}" showNavButton="true" navButtonPress="onNavButtonPress">
+        <headerContent>
+            <Button icon="{viewProperties>/multiselectIcon}" press="onMultiSelectPressed" enabled="{appProperties>/noEditMode}" id="multiselectButton" />
+        </headerContent>
+
+		<subHeader>
+			<Toolbar>
+			    <!--Search field which triggers a (filtered) backend search.
+			        On desktop this control also provides an option to refresh the list. 
+			        On non desktop devices the pull to refresh control (see below) is used for that -->
+				<SearchField showRefreshButton="{device>/isDesktop}" id="SearchField"
+					search="onSearch" width="100%" />
+			</Toolbar>
+		</subHeader>
+		
+		<content>
+		    <!-- On non desktop devices the user triggers the list refresh by pulling down the list (pull to refresh) -->
+		    <PullToRefresh visible="{device>/isNoDesktop}" refresh="onPullToRefresh" />
+
+		    <!--List of purchase orders that need to be approved. The list entries contain the information supplier name, total value, requester, change date and number of items-->
+		    <!-- Note that the select defined for the list items ensures, that all attributes that are required on S3 view are loaded already here -->
+			<List
+				id="list" selectionChange="onItemSelect" modeAnimationOn="false" includeItemInSelection="true" mode="{viewProperties>/listMode}"
+				growing="true" growingScrollToLoad="true" updateFinished="onUpdateFinished" updateStarted="onUpdateStarted" noDataText="{viewProperties>/noDataText}" swipe="onSwipe" >
+				<ObjectListItem
+					id="objectListItem" type="{device>/listItemType}" press="onItemSelect" 
+					icon="{ImageUrl}" iconDensityAware="false" title="{Name}" numberUnit="{CurrencyCode}"
+					number="{parts:[{path:'Price'},{path:'CurrencyCode'}], formatter:'sap.ca.ui.model.format.AmountFormat.FormatAmountStandard'}" >
+					<attributes>
+						<ObjectAttribute text="{MainCategoryName}" />
+						<ObjectAttribute text="{SubCategoryName}" />
+					</attributes>
+				</ObjectListItem>
+				<infoToolbar>
+					<Toolbar visible="{viewProperties>/filterToolbarVisible}">
+						<Label text="{viewProperties>/filterInfoText}" />
+					</Toolbar>
+				</infoToolbar>
+				<swipeContent>
+					<Button text="{i18n>xbut.delete}" type="Reject" tap="onSwipeDeleteItem" />
+				</swipeContent>
+			</List>
+		</content>
+		
+		<!--Empty footer bar to align with the footer bar of the detail view-->
+		<footer>
+			<Bar >
+				<contentRight>
+					<Button  icon="sap-icon://sort" visible ="{appProperties>/isSingleSelect}" enabled="{appProperties>/noEditMode}" press="onSortPressed" id="sortButton" />
+					<Button  icon="sap-icon://filter" visible ="{appProperties>/isSingleSelect}" enabled="{appProperties>/noEditMode}" press="onFilterPressed" id="filterButton" />
+					<Button  icon="sap-icon://group-2" visible ="{appProperties>/isSingleSelect}" enabled="{appProperties>/noEditMode}" press="onGroupPressed" id="groupButton" />
+					<Button  icon="sap-icon://add" visible ="{appProperties>/isSingleSelect}" enabled ="{appProperties>/isEditAllowed}" press="onAddPressed" id="addButton" />
+					<Button  text="{i18n>xbut.delete}" visible ="{appProperties>/isMultiSelect}" enabled ="{viewProperties>/markExists}" press="onDeletePressed" id="deleteButton" />
+					<Button  icon="sap-icon://overflow" visible ="{appProperties>/isMultiSelect}" press="onOverflowPressed" id="overflowButton" />
+				</contentRight>			
+			</Bar>
+		</footer>
+	</Page>
+	
+</mvc:View>
